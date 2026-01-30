@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Reader</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="assets/js/libs/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/ui/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/js/libs/lity.css" />
+    <link rel="stylesheet" href="assets/ui/cTools.css">
+    <link rel="stylesheet" href="assets/ui/mainPlayer.css">
+    <link rel="stylesheet" href="assets/ui/readmode.css">
+
+    <style type="text/css" >
+        .chapterBlock {
+            top: 807px;
+            left: 52px;
+        }
+    </style>
+</head>
+
+<body onunload="endScorm()">
+    <div id="wrapper" class="ClsLargeView" style="opacity: 0;">
+        <canvas-tools id="canTools" style="position: absolute; width: 1062px; height: 681px;"></canvas-tools>
+        <div id="blackWall"></div>
+        <div id="startScreen" >
+            <div id="startScreenCont">
+                <video id="theme_animation" src="assets/media/theme_animation.mp4" playsinline webkit-playsinline type="video/mp4"></video>
+                <div class="vCenter" style="display: none;"> <h1 id="chapterNumber"></h1> <h3 id="chapterName"></h3> <span id="startBtn" onclick="start()">Start</span> </div>
+                
+                <div class="chapterBlock" onclick="openChapter('ch1', 0)">
+                    Chapter <span id="chapterNum">1</span>
+                    <span id="ChapterName">Food We Eat</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="BookLoader" class="ClsHide">
+            <img id="loadingFirstImg" src="assets/ui/img/indicatorLoader.gif" alt="">
+        </div>
+
+        <!-- scorm data popup : starts -->
+        <div id="SPopupMMainCont">
+            <div id="SPopupCont">
+                <div id="SPopupText">Do you want to continue from where you left?</div>
+                <div id="SPopupYes" onclick="OnScormYes()">yes</div>
+                <div id="SPopupNo" onclick="OnScormNo()">no</div>
+            </div>
+        </div>
+        <!-- scorm data popup : ends -->
+
+        <div id="tools" class="top enable">
+            <div id="DvToolBgTop" class=""></div>
+            <div id="DvToolBgBottom" class=""></div>
+            <div id="toolCont0">
+                <div id="IcAct" class="actBtn disable" onclick="toggleActPopup()">Activity</div>
+            </div>
+            <div id="toolCont1">
+                <div id="toolCont">
+                    
+                    <div id="IcTOC" class="ClsTool" onclick="gotoPrintPageNo('TOC')"></div>
+                    <div id="viewBtn" class="viewIcon ClsTool single" onclick="toggleView()"></div>
+                    <div class="gotoSet" id="gotoSet">
+                        <div id="IcGoToPage" onclick="pageNoKeyUp('click')">GO TO PAGE</div>
+                        <input
+                            id="InpPageNo" type="number"
+                            min=0 max=999 maxlength=3
+                            onkeypress="return isNumberKey(event);"
+                            onkeyup="pageNoKeyUp(event)"
+                        />
+                        <div id="LabelPageNo"></div>                                                
+                        
+                    </div>                                        
+                    <div id="IcZoomIn" class="ClsTool" onclick="GetZoomIn()"></div>
+                    <div id="IcZoomOut" class="disable ClsTool" onclick="GetZoomOut()"></div>
+                    <div id="IcHighlight" class="ClsTool" onclick="OpenHighPopup()"></div>
+                    <div id="IcPentool" class="ClsTool" onclick="HandlePenTool()"></div>
+                    <!-- <div id="toolCont2">
+                        
+                    </div> -->
+                    <!-- <div id="nextBackToggle" class="next ClsTool" onclick="setToolNavigation()"></div> -->
+                </div>
+            </div>
+            <div id="dropMenu">
+                <div id="IcAudio" class="ClsTool" onclick="OnAudioSpeedClick()">Audio Speed</div>
+                <div id="IcThumbnail" class="ClsTool" onclick="openIconPopup('Thumbnail')">Thumbnail</div>
+                <div id="IcNote" class="ClsTool" onclick="openIconPopup('Note')">Note</div>
+                <div id="IcSearch" class="ClsTool" onclick="enablesearch()">Search</div>
+                <div id="IcHelp" class="ClsTool" onclick="openHelp()">Help</div>
+                
+                <!-- <span id="IcGlossary" onclick="enableGlossary()">Glossary</span> -->                                
+                <!-- <span id="IcBookmark" onclick="openIconPopup('Bookmark')">Bookmark</span> -->                
+                <!-- <span id="IcReadmode" class="readmode" onclick="config.disclaimer ? openDisclaimer() : zoompopup()">Read Mode</span> -->                
+                <!-- <span id="IcSpotlight" onclick="showHotspot()">Spotlight</span> -->
+                <!-- <span id="IcMaskIcon" onclick="showMask()">Mask</span> -->
+            </div>
+                                            
+        </div>
+        <!-- <div id="IcMenuBtn" class="ClsSmallIcon" onclick="toggleMenu()"></div> -->
+        <!-- <div id="IcMenuBtn" class="ClsSmallIcon"></div> -->
+
+        <div id="main" class="ClsLargeView">
+            <div id="viewerCont" class="base">                                
+                <div id="viewer">       
+                    <div id="prEvBtn" class="disable" onclick="goToPage('back')">Prev</div>
+                    <div id="neXtBtn" onclick="goToPage('next')">Next</div>             
+                    <!-- <div class="leftPage"></div>
+                    <div class="rightPage"></div> -->
+                </div> 
+                
+                
+                
+            </div> 
+
+            <!-- colour pop up : starts -->            
+            <div id="ContClrPlt" class="hide">
+                <div id="bgClrPlt"></div>
+                <div id="Cell4_0" class="ClsPCell" onclick="SelectEraser(event)" ontouchstart="SelectEraser(event)" title="Eraser"></div>
+                <div id="Cell4_1" class="ClsPCell" onclick="SelectReset(event)" ontouchstart="SelectReset(event)" title="Reset all"></div>
+                <div id="Cell4_2"></div>       
+
+                <div id="ContClrBg"></div>              
+                <div id="ContClr">
+                    <div id="Cell0_0" class="ClsPCell" data-value=1 data-colour="#000000" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType0 ClsClr0"></div></div>
+                    <div id="Cell0_1" class="ClsPCell" data-value=3 data-colour="#000000" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType1 ClsClr0"></div></div>
+                    <div id="Cell0_2" class="ClsPCell" data-value=5 data-colour="#000000" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType2 ClsClr0"></div></div>
+                    <div id="Cell0_3" class="ClsPCell" data-value=7 data-colour="#000000" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType3 ClsClr0"></div></div>
+
+                    <div id="Cell1_0" class="ClsPCell" data-value=1 data-colour="#ff0031" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType0 ClsClr1"></div></div>
+                    <div id="Cell1_1" class="ClsPCell" data-value=3 data-colour="#ff0031" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType1 ClsClr1"></div></div>
+                    <div id="Cell1_2" class="ClsPCell" data-value=5 data-colour="#ff0031" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType2 ClsClr1"></div></div>
+                    <div id="Cell1_3" class="ClsPCell" data-value=7 data-colour="#ff0031" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType3 ClsClr1"></div></div>
+
+
+                    <div id="Cell2_0" class="ClsPCell" data-value=1 data-colour="#23ca00" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType0 ClsClr2"></div></div>
+                    <div id="Cell2_1" class="ClsPCell" data-value=3 data-colour="#23ca00" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType1 ClsClr2"></div></div>
+                    <div id="Cell2_2" class="ClsPCell" data-value=5 data-colour="#23ca00" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType2 ClsClr2"></div></div>
+                    <div id="Cell2_3" class="ClsPCell" data-value=7 data-colour="#23ca00" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType3 ClsClr2"></div></div>
+
+                    <div id="Cell3_0" class="ClsPCell" data-value=1 data-colour="#0891fe" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType0 ClsClr3"></div></div>
+                    <div id="Cell3_1" class="ClsPCell" data-value=3 data-colour="#0891fe" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType1 ClsClr3"></div></div>
+                    <div id="Cell3_2" class="ClsPCell" data-value=5 data-colour="#0891fe" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType2 ClsClr3"></div></div>
+                    <div id="Cell3_3" class="ClsPCell" data-value=7 data-colour="#0891fe" onclick="SelectColour(event)" ontouchstart="SelectColour(event)"><div class="ClsType3 ClsClr3"></div></div>
+                </div>
+            </div> 
+            <!-- colour pop up : ends --> 
+            
+            
+            
+
+            <!-- Pan controls -->
+            <div id="panControlCont" class="hide">
+                <div id="defaultPan" class="enable" onclick="DefaultPanClick()"></div>
+                <div id="movePan" class="disable" onclick="MovePanClick()"></div>
+            </div>
+            
+            <div id="loading" class="loadingContent">
+                <div class="vCenter">                    
+                    <img id="loadingImg" src="" align="absmiddle" alt="">
+                    <!-- <div id="loadintText">Loading...</div> -->
+                </div>
+            </div>
+
+            <!-- Mask HTML : Starts -->
+            <div id="DvMask" class="ClsHideMask"></div>
+            <!-- Mask HTML : Ends -->           
+            
+        </div>
+        <div id="actBgCont" class="hide">
+            <div id="actOuterCont">
+                <div id="actBgHeader">Select an activity/animation from the given option/s.</div>
+                <div id="actCont">
+                    <div id="actThumbCont"></div>
+                </div>
+                <div id="closeBtnActPopup" onclick="hideActPopup()"></div>
+            </div>
+        </div>
+        
+
+        <!-- GlossaryDetails -->
+        <div class="GlossaryDetails">
+            <div class="GlossaryData">
+                <div class="Glossarysearch">Search keyword</div>
+                <input type="search" class="searchBox_glo" id="searchBox_glo" onkeyup="glossarySearch()"
+                    placeholder="Search for words..">
+                <div class="GlossaryResult" id="GlossaryResult">
+                </div>
+            </div>
+            <img src="assets/ui/img/close.png" alt="close" class="closeGlossaryTab">
+            <div class="Glossary_head">
+                <div class="Glossary_icon GlossaryIcon" id="Glossaryicon"></div>
+                <div class="GlossaryTitle" id="GlossaryTitle">Glossary</div>
+            </div>
+        </div>
+        <!-- End GlossaryDetails -->
+
+        <!-- Let's go : Activity Popup - Starts -->
+        <div id="letsgo_activity">
+            <iframe id="IFrame_letsgo_activity"></iframe>
+            <img class="closebttn" src="assets/ui/img/close.png" alt="" onclick="closeLetsGoActivity()">
+        </div>
+        <!-- Let's go : Activity Popup - Ends -->
+
+        <!-- Pop Up - Lets go video -->
+        <div id="letsgo_video">
+            <img src="assets/ui/img/close.png" alt="" onclick="closeLetsGoVideo()">
+            <video
+                id="theme_animation"
+                src="" type="video/mp4"
+                controls controlsList="nodownload"
+                disablePictureInPicture
+            ></video>
+        </div>
+
+        <!-- Pop Up - Enlarge Image -->
+        <div id="enlarge_image">
+            <img class="closebttn" src="assets/ui/img/close.png" alt="" onclick="closeEnlargedImage()">
+            <img id="enlarge_image_elem" src="" alt="" />
+            <audio id="enlarge_image_audio_elem" src="" type="audio/mp3"></audio>
+        </div>
+        
+        <!-- Pop Up - Listening exercises -->
+        <div id="listening_exercises">
+            <img class="closebttn" src="assets/ui/img/close.png" alt="" onclick="closeListeningExercisesPopUp()">
+            <audio id="listening_exercises_audio_elem" src="" type="audio/mp3"></audio>
+        </div>
+
+        <!-- Read mode start -->
+        <div class="blackback popup"></div>
+
+        <img src="assets/ui/img/close.png" class="popup" alt="closezoom" id="closezoom" onclick="closeZoomup()">
+
+        <div class="zoomcont popup">
+            <img class=" line2" alt="line2" src="assets/ui/img/bind.png">
+            <div class="leftpagecont"></div>
+            <div class="rightpagecont"></div>
+            <div class="singleviewcont" style="display: none;"></div>
+        </div>
+
+        <!-- End Read mode start -->
+
+        <!-- disclaimer starts -->
+        <div class="disclaimerPopUp">
+            <div class="discInner">
+                <img src="assets/ui/img/close.png" alt="close" onclick="closeDisclaimer()">
+                <div class="disContent">
+                    <p>
+                        Given the nature of the subject, it is recommended that the features Spotlight, Zoom and Mask be used instead of the Read Mode. This helps the learners focus on the content -- illustrated in table form, as pictorial representations, or as solution steps -- with better visual clarity.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- disclaimer ends -->
+
+         <!-- search -->
+         <div class="featureDetails">
+            <div class="featureData">
+                
+            </div>
+            <img src="assets/ui/img/close.png" alt="close" class="closeFeatureTab">
+            <div class="feature_head">
+                <div class="title_icon searchIcon" id="icon"></div>
+                <div class="tabTitle" id="featureTitle">Search</div>
+            </div>
+        </div>
+
+        <!-- End search -->
+
+        <!-- help star -->
+        <div id="helpContent">
+            <img src="assets/ui/img/close.png" alt="close button" id="closeHelp" onclick="closeHelp()">
+            <img src="assets/ui/img/helppage1.png" alt="help screen" class="helpscreen">
+            <img src="assets/ui/img/helppagenum_s.png" alt="helppagenum_s" id="pagenumimg" style="display: none;">
+            <!-- <img src="assets/ui/img/icon_note.png" alt="note taking" id="info_notetaking" onclick="feature_info('#div_notetaking')"> -->
+            <div alt="toc button" id="tocBtn" onclick="feature_info('#div_toc')"></div>
+            <div alt="bookmark" id="info_bookmark" onclick="feature_info('#div_bookmark')"></div>
+            <div alt="highlight" id="info_highlight" onclick="feature_info('#div_highlight')"></div>
+            <div alt="goto" id="info_goto" onclick="feature_info('#div_goto')"></div>
+            <!-- <img src="assets/ui/img/texzoom.png" alt="read mode" id="read_mode" onclick="feature_info('#div_readmode')"> -->
+            <div alt="search" id="info_search" onclick="feature_info('#div_search')"></div>                       
+            <div alt="singlepage" id="info_singlepage" onclick="feature_info('#div_singlepage')"></div>
+            <div alt="glossary" id="info_glossary" onclick="feature_info('#div_glossary')"></div>
+
+            <div alt="audio speed" id="info_audioSpeed" onclick="feature_info('#div_audioSpeed')"></div>
+            <div alt="pen button" id="penBtn" onclick="feature_info('#div_pen')"></div>
+            <div alt="note taking" id="info_notetaking" onclick="feature_info('#div_notetaking')"></div>
+
+
+            <div alt="oupi_activity" id="info_oupi_activity" onclick="feature_info('#div_activity')"> </div>
+            <div id="info_navigate" onclick="feature_info('#div_navigate')"></div>
+            <div id="info_navigate1" onclick="feature_info('#div_navigate1')"></div>
+            <div alt="features" id="info_togglefeatures" onclick="feature_info('#div_togglefeatures')"></div>
+            <div alt="help" id="info_help" onclick="feature_info('#div_help')"></div>
+            
+
+            
+            <!-- <div alt="zoonIn button" id="zoonInBtn" onclick="feature_info('#div_zoonInOut')"></div>
+            <div alt="zoonOut button" id="zoonOutBtn" onclick="feature_info('#div_zoonInOut')"></div> -->
+            <div alt="more button" id="moreBtn" onclick="feature_info('#div_more')"></div>
+
+            <div alt="Toggle button" id="toggleAudioBtn" onclick="feature_info('#div_toggleAudioInfo')"></div>
+
+            <div id="btns_info" style="display: block;">
+                <img src="assets/ui/img/audioIcon.png" alt="audio button" id="audiBtn">
+                <p class="ba3">Read-Along</p>
+                <p class="ba1">On clicking the icon, the audio of the text will be played and the corresponding text will be highlighted. You can also pause/play the audio midway by simply clicking on the icon.
+                </p>                
+            </div>
+        </div>
+
+
+        <div id="helpContent_2">
+            <img src="assets/ui/img/close.png" alt="close button" id="closeHelp" onclick="closeHelp()">
+            <img src="assets/ui/img/helppage2.png" alt="help screen" class="helpscreen">
+            <img src="assets/ui/img/helppagenum_s.png" alt="helppagenum_s" id="pagenumimg" style="display: none;">
+
+            <div alt="audio speed" id="info_audioSpeed_2" onclick="feature_info('#div_audioSpeed')"></div>
+            <div alt="pen button" id="penBtn_2" onclick="feature_info('#div_pen')"></div>
+            <div alt="note taking" id="info_notetaking_2" onclick="feature_info('#div_notetaking')"></div>
+
+            <div alt="zoonIn button" id="zoonInBtn_2" onclick="feature_info('#div_zoonInOut')"></div>
+            <div alt="zoonOut button" id="zoonOutBtn_2" onclick="feature_info('#div_zoonInOut')"></div>
+            <div alt="thumbnailIcn button" id="thumbnailIcnBtn" onclick="feature_info('#div_thumbnailIcn')"></div>
+            <div alt="spotlight button" id="spotlightBtn" onclick="feature_info('#div_spotlight')"></div>                      
+            <div alt="read mode" id="read_mode" onclick="feature_info('#div_readmode')"></div>
+            <div alt="mask button" id="maskBtn" onclick="feature_info('#div_mask')"></div>
+           
+            <!-- <div alt="singlepage" id="info_singlepage_2" onclick="feature_info('#div_singlepage')"></div> -->
+            <!-- <div alt="glossary" id="info_glossary_2" onclick="feature_info('#div_glossary')"></div> -->
+            
+            <div alt="oupi_activity" id="info_oupi_activity" onclick="feature_info('#div_activity')"> </div>
+            <div id="info_navigate" onclick="feature_info('#div_navigate')"></div>
+            <div id="info_navigate1" onclick="feature_info('#div_navigate1')"></div>
+            <div alt="features" id="info_togglefeatures" onclick="feature_info('#div_togglefeatures')"></div>
+            <div alt="help" id="info_help_2" onclick="feature_info('#div_help')"></div>           
+            
+            <div alt="more button" id="moreBtn" onclick="feature_info('#div_more')"></div>  
+            
+
+            <div alt="Toggle button" id="toggleAudioBtn" onclick="feature_info('#div_toggleAudioInfo')"></div>
+
+
+            <div id="btns_info" style="display: block;">
+                <img src="assets/ui/img/audioIcon.png" alt="audio button" id="audiBtn">
+                <p class="ba3">Read-Along</p>
+                <p class="ba1">On clicking the icon, the audio of the text will be played and the corresponding text will be highlighted. You can also pause/play the audio midway by simply clicking on the icon.
+                </p>                
+            </div>
+        </div>                   
+        <div id="div_activity" style="display: none;">
+            <p class="b2">Steps to play a Learning Resource</p>
+            <div class="underline"></div>
+            <p class="b3">1. Click on the <span class="colormaroon">Activity</span> icon situated at the top left-hand corner of <br/>&nbsp;&nbsp;&nbsp; the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A pop-up for the selected Learning Resource will appear on the <br/>&nbsp;&nbsp;&nbsp;screen.</p>            
+        </div>
+
+        <div id="div_toc" style="display: none;">
+            <p class="b2">Steps to use TOC</p>
+            <div class="underline"></div>
+            <p class="b3">1. The <span class="colormaroon">TOC</span> icon displays the Table of Contents in the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Click on the name of a chapter or its starting page number to go <br/>&nbsp;&nbsp;&nbsp; directly to the chapter.</p>
+        </div>
+
+        <div id="div_bookmark" style="display: none;">
+            <p class="b2">Steps to add a Bookmark</p>
+            <div class="underline"></div>
+            <p class="b3">1. Click on the <span class="colormaroon">Bookmark</span> icon in the top panel of the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Click on the <span class="colormaroon">Add Bookmark</span> tab.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. A yellow tag will appear at the top right-hand corner of the page <br/>&nbsp;&nbsp;&nbsp; like the one below.</p>
+            <img src="assets/ui/img/bookmark_open.png" alt="img_bookmark" class="img_bookmark">
+            <p class="ClsLineBreak"></p>
+            <p class="b6">4. Click on the tag. A star will appear on the tag to show that the <br/>&nbsp;&nbsp;&nbsp; bookmark is saved.</p>
+            <img src="assets/ui/img/bookmark_closed.png" alt="img_bookmark1" class="img_bookmark1">
+            <p class="ClsLineBreak"></p>
+            <p class="b8 mva">Steps to delete a bookmark</p>
+            <div class="underline"></div>
+            <p class="b9">To delete a bookmark, click on the star that appears on the tag.</p>
+        </div>
+
+        <div id="div_highlight" style="display: none;">
+            <p class="b2">Steps to Highlight Text</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Select the text you would like to highlight using the cursor.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Click on the <span class="colormaroon">Highlight</span> icon in the top panel of the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. Select a colour of your choice from the drop-down box to  <br/>&nbsp;&nbsp;&nbsp; highlight your text. </p>
+            <p class="ClsLineBreak"></p>
+            <img src="assets/ui/img/p4.png" alt="img_highlight" class="img_highlight">
+            <p class="b2 mva">Steps to Remove the Highlight</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. To delete the highlight, simply click on the highlighted portion of  <br/>&nbsp;&nbsp;&nbsp; the text.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A pop-up will appear, asking if you wish to delete the highlight.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. Click on ‘Yes’ if you want to delete the highlight.</p>
+        </div>
+
+        <div id="div_highlight_IOS" style="display: none;">
+            <p class="b2">Steps to Highlight Text</p>
+            <div class="underline"></div>
+            <div class="underline"></div>
+            <p class="b3">1. Click on the <span class="colormaroon">Highlight</span> icon in the top panel of the e-book.</p>
+            <div class="underline"></div>
+            <p class="b4">2. Select a colour of your choice from the drop-down box to highlight <br/>&nbsp;&nbsp;&nbsp; your text.</p>
+            <div class="underline"></div>
+            <p class="b5">3. Select the text you would like to highlight using the cursor. </p>
+            <img src="assets/ui/img/p4.png" alt="img_highlight" class="img_highlight">
+            <div class="underline"></div>
+            <p class="b2 mva">Steps to Remove the Highlight</p>
+            <div class="underline"></div>
+            <div class="underline"></div>
+            <p class="b3">1. To delete the highlight, simply click on the highlighted portion of the <br/>&nbsp;&nbsp;&nbsp; text.</p>
+            <div class="underline"></div>
+            <p class="b4">2. A pop-up will appear, asking if you wish to delete the highlight.</p>
+            <div class="underline"></div>
+            <p class="b5">3. Click on ‘Yes’ if you want to delete the highlight.</p>
+        </div>
+
+        <div id="div_goto" style="display: none;">
+            <p class="b2">Steps to go to any Page</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Go to Page</span> dialog box in the top panel of the <br/>&nbsp;&nbsp;&nbsp; e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Type in the page number you would like to access and press  <br/>&nbsp;&nbsp;&nbsp; ‘Enter’. The selected page will be shown. </p>
+        </div>
+
+        <div id="div_search" style="display: none;">
+            <p class="b2">Steps to use the Search Feature</p>
+            <div class="underline"></div>
+            <p class="b3">1. Click on the <span class="colormaroon">Search</span> icon in the top panel of the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Enter the keyword in the dialog box. Click on the <span class="colormaroon">Search</span> icon on  <br/>&nbsp;&nbsp;&nbsp; the right.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. A list containing all sentences in which the specified keyword is <br/>&nbsp;&nbsp;&nbsp; present, and their page numbers, is displayed.</p>
+        </div>
+
+        <div id="div_singlepage" style="display: none;">
+            <p class="b2">Steps to Change between Single and Double Views</p>
+            <div class="underline"></div>
+            <p class="b3">To change the mode of the page you are currently viewing, click on the <span class="colormaroon">View</span> icon in the top panel of the e-book.</p>
+        </div>
+
+        <div id="div_glossary" style="display: none;">
+            <p class="b2">Steps to use Glossary</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Glossary</span> icon in the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A complete glossary of difficult words from the book is displayed.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. You can use the Search keyword option to search for a particular <br/>&nbsp;&nbsp;&nbsp;difficult word in the book.</p>
+        </div> 
+        
+        <div id="div_audioSpeed" style="display: none;">
+            <p class="b2">Steps to use Audio Speed</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Audio Speed</span> icon in the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A slider to change audio playback speed is displayed.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b5">3. You can move the slider left or right to decrease or increase the book audio playback speed.</p>
+        </div> 
+
+        
+        
+        <div id="div_pen" style="display: none;">
+            <p class="b2">Steps to use the Pen Tool</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Pen</span> icon, the annotation toolbox gets visible.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. The pen can be used to make annotations or any marks on the <br/>&nbsp;&nbsp;&nbsp; ebook.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. The toolbox also has an eraser to erase the marks made by the <br/>&nbsp;&nbsp;&nbsp; pen and an undo button to undo any markings.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">4. Pen and eraser icons work in a toggle mode.</p>
+        </div>
+
+        <div id="div_zoonInOut" style="display: none;">
+            <p class="b2">Steps to use Zoom-In/Zoom-Out</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Zoom-In</span> icon to enlarge size of text so that it  <br/>&nbsp;&nbsp;&nbsp; appears larger or nearer which can zoom upto 4 times the <br/>&nbsp;&nbsp;&nbsp; original size.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Click on the <span class="colormaroon">Zoom-Out</span> icon to reduce the size of text so that it <br/>&nbsp;&nbsp;&nbsp; appears smaller and further away.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. A zoom operation just changes the size of the font on-screen  <br/>&nbsp;&nbsp;&nbsp; without impacting the content in any way.
+                Also the page can be  <br/>&nbsp;&nbsp;&nbsp; dragged to focus on any specific portion of the content. 
+            </p>            
+        </div>
+
+        <div id="div_help" style="display: none;">
+            <p class="b2">Steps to use the Help Feature</p>
+            <div class="underline"></div>
+            <p class="b3">Click on the <span class="colormaroon">Help</span> icon to know how to use the features of the various icons.</p>
+        </div>  
+        
+        <div id="div_more" style="display: none;">
+            <p class="b2">More Displays Hidden Buttons</p>
+            <div class="underline"></div>
+            <p class="b3">This button is for viewing more tools which help in making the ebook user-friendly.</p>            
+        </div>
+
+        <div id="div_notetaking" style="display: none;">
+            <p class="b2">Steps to Insert a Note</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak2"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Note</span> icon in the top panel of the e-book.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b4">2. Click on the <span class="colormaroon">Add Note</span> tab.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b5">3. Click on the page where you want the note to be placed.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b6">4. Enter the text for your note and click on <span class="colormaroon">Save</span>.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b7">5. Your note would appear as the icon below.</p>  
+            <p class="ClsLineBreak"></p>          
+            <img src="assets/ui/img/p2.png" alt="img_noteTaking" class="img_noteTaking">
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b9">6. The note gets saved and can be read whenever the page is opened.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"><br/></p>
+            <p class="b8 mva">Steps to Delete a Note</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak2"></p>
+            <p class="b9">1. Click on the <img src="assets/ui/img/p2.png" alt="img_noteTaking1" class="img_noteTaking1" style="vertical-align: middle;"> icon.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b10">2. A pop-up containing the information in the note will appear. </p>   
+            <p class="ClsLineBreak2"></p>         
+            <p class="b11">3. Click on the <img src="assets/ui/img/p3.png" alt="img_close" class="img_close" style="vertical-align: middle;"> button at the top right-hand corner of the note.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b12">4. A pop-up will appear, asking if you wish to delete the note.</p>
+            <p class="ClsLineBreak2"></p><p class="ClsLineBreak2"></p>
+            <p class="b13">5. Click on ‘Yes’ if you want to delete the note.</p>
+        </div>
+
+        <div id="div_thumbnailIcn" style="display: none;">
+            <p class="b2">Steps to use Thumbnail</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Thumbnail</span> icon in the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. The pages of the chapter will show up as thumbnails.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. Clicking on a thumbnail will take the user directly to the page <br/>&nbsp;&nbsp;&nbsp; he/she wants to go to.</p>
+        </div>
+
+        <div id="div_spotlight" style="display: none;">
+            <p class="b2">Steps to use Spotlight</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Spotlight</span> icon in the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A <i>resizable</i> circular window appears and only portion of the  <br/>&nbsp;&nbsp;&nbsp; content that fits into the circle will be visible.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. The rest of the view of the page is hidden/masked.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">4. The spotlight can be dragged/increased/decreased in size to  <br/>&nbsp;&nbsp;&nbsp; focus on a specific area.</p>
+        </div>
+
+
+        <div id="div_readmode" style="display: none;">
+            <p class="b2">Steps to use Read Mode</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Read Mode</span> icon in the top panel of the e-book.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A pop-up window opens on the page, displaying the page content <br/>&nbsp;&nbsp;&nbsp;&nbsp;in a bigger font size for better readability.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. Different sections in the chapter are shown either in white or pale <br/>&nbsp;&nbsp;&nbsp; background to differentiate these from each other.</p>
+        </div>
+
+        <div id="div_mask" style="display: none;">
+            <p class="b2">Steps to use Masking Feature</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. Click on the <span class="colormaroon">Mask</span> icon in the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. A <i>resizable</i> rectangular black box will appear on the ebook and <br/>&nbsp;&nbsp;&nbsp; hide content.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">3. The teacher could use this feature to hide a portion of the page <br/>&nbsp;&nbsp;&nbsp; while asking students any question related to the content.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">4. The mask can be dragged/increased/decreased in size to focus on <br/>&nbsp;&nbsp;&nbsp;a specific area.</p>
+        </div>
+
+        <div id="div_toggleAudioInfo" style="display: none;">
+            <p class="b2">Steps to View/hide the On-page Audio Icons</p>
+            <div class="underline"></div>
+            <p class="b3">On clicking this toggle button, the audio icons on the page/s will be viewed or hidden.</p>
+        </div>
+
+        <div id="div_togglefeatures" style="display: none;">
+            <p class="b2">Steps to use Toolbar Expand/Collapse</p>
+            <div class="underline"></div>
+            <p class="ClsLineBreak"></p>
+            <p class="b3">1. This will help expand and collapse the toolbar.</p>
+            <p class="ClsLineBreak"></p>
+            <p class="b4">2. Collapse hides the toolbar, allowing more space for the page display.</p>
+        </div>
+        <div id="div_navigate" style="display: none;">
+            <p class="b2">Steps to Navigate Pages</p>
+            <div class="underline"></div>
+            <p class="b3">You can navigate to the previous page by clicking this button.</p>
+        </div>
+        <div id="div_navigate1" style="display: none;">
+            <p class="b2">Steps to Navigate Pages</p>
+            <div class="underline"></div>
+            <p class="b3">You can navigate to the next page by clicking this button.</p>
+        </div>
+        <!-- new --> 
+        <!-- end help  --> 
+
+        <!-- Go To Page Popup : Starts -->
+        <div id="GoToPagePopupCont" style="opacity: 0;" class="hide">
+            <div id="GoToPageMsg">Page number entered is not within the book range.</div>
+        </div>
+        <!-- Go To Page Popup : Ends -->
+
+        <!-- Hightlight data Limit Ends : Starts -->
+        <div id="HightlightDataLimitEnds" style="opacity: 0;" class="hide">
+            <div id="HightlightDataLimitEndsMsg">
+                You have reached the highlight limit.
+                <img src="assets/ui/img/close.png" alt="Close" onclick="closeLimitMsgPopUp()">
+            </div>
+        </div>
+        <!-- Hightlight data Limit Ends : Ends -->
+
+        <!-- Bookmark Popup : Starts -->
+        <div id="BookmarkPopupCont" style="opacity: 0;" class="hide">
+            <div id="BookmarkMsg">Bookmark updated successfully.</div>
+        </div>
+        <!-- Bookmark Popup : Ends -->
+
+
+        <!-- Note Popup : Starts -->
+        <div id="NotePopupCont" style="opacity: 0;" class="hide">
+            <div id="NoteMsg">Only one note can be created per page.</div>
+        </div>
+        <!-- Note Popup : Ends -->
+
+
+        <!-- popup for notes -->
+        <div class="highlightpopup" style="display: none;">
+            Are you sure you want to remove the </br><span class="note">note</span>?
+            <span class="yes">yes</span>
+            <span class="no">no</span>
+        </div>
+        <!-- close popup for notes -->
+
+        <!-- Popup : Starts -->
+        <div id="IconPopupMainCont" class="ClsClose">
+            <div id="IconPopupCont" class="ClsThumbnail">                 
+                <!-- popup body : starts-->           
+                <div id="IconPopupBody">
+                    <!-- different blocks for each popups (add here) : starts -->
+                    <div id="BlockBookmark" class="ClsPopupBlock" onclick="AddBookmark()">+ Add Bookmark</div>
+                    <div id="BlockNote" class="ClsPopupBlock" onclick="AddBlockNote()">+ Add Note</div>
+                    <div id="BlockHighlight" class="ClsPopupBlock"></div>
+                    <!-- different blocks for each popups : ends -->
+
+                    <div id="MsgBookmark" class="ClsPopupMsg hide">List of bookmarks added in this book.</div>
+                    <div id="MsgNote" class="ClsPopupMsg hide">List of notes added in this book.</div>
+
+                    <!-- common data container : starts -->
+                    <div id="IconPopupDataCont" class="allowScroll"></div>
+                    <!-- common data container : ends -->
+                </div>
+                <!-- popup body : ends-->           
+
+                <!-- <div id="WhiteBg"></div> -->
+                <div id="IconPopupHeader">Thumbnail</div>
+                <div id="IconPopupHeaderImg"></div>
+                <div id="IconPopupCloseBtn"  onclick="closeIconPopup()"></div>
+            </div>
+
+            <!-- Thumbnails : Start -->
+            <!-- <div class="ThumbnailDetails">
+                <div class="GlossaryData">
+                    <div class="GlossaryResult" id="GlossaryResult">
+                    </div>
+                </div>
+                <img src="assets/ui/img/close.png" alt="close" class="closeThumbnailTab">
+                <div class="Glossary_head">
+                    <div class="Glossary_icon GlossaryIcon" id="Glossaryicon"></div>
+                    <div class="GlossaryTitle" id="GlossaryTitle">Thumbnail</div>
+                </div>
+            </div> -->
+            <!-- Thumbnails : Ends -->
+        </div>
+        <!-- Popup : Ends -->
+
+        <!-- Audio Speed Popup : Starts -->
+        <div id="AudPopupMainCont" class="ClsClose">            
+            <div id="speedControlCont">
+                <input type="range" id="pbrange" min=".5" max="2" value="1" step=".1" />
+                <span id="scLabel">1x</span>
+            </div>            
+        </div>
+        <!-- Audio Speed Popup : Ends -->
+
+        <!-- Highlight Popup : Starts -->
+        <div id="HighPopupMainCont" class="ClsClose">
+            <div id="HighPopupMainContClose" onclick="CloseHighPopup()"></div>
+            <div id="HighColorCont">
+                <div id="Color0" class="ClsHighCell" data-value=0 onclick="HighSelText(event)"></div>
+                <div id="Color1" class="ClsHighCell" data-value=1 onclick="HighSelText(event)"></div>
+                <div id="Color2" class="ClsHighCell" data-value=2 onclick="HighSelText(event)"></div>
+                <div id="Color3" class="ClsHighCell" data-value=3 onclick="HighSelText(event)"></div>
+                <div id="Color4" class="ClsHighCell" data-value=4 onclick="HighSelText(event)"></div>
+            </div>
+        </div>
+        <!-- Highlight Popup : Ends -->
+
+        <!-- Highlight Message : starts -->
+        <div id="HighMsgMainCont" class="ClsClose">
+            <div id="HighMsgPopupCont">
+                <div id="HighMsgText">Are you sure you want to remove the highlight?</div>
+                <div id="HighMsgYes" onclick="DeleteHighlight()">yes</div>
+                <div id="HighMsgNo" onclick="HideHighlightMsgBox()">no</div>
+            </div>
+        </div>
+        <!-- Highlight Message : ends -->
+
+        
+
+
+    </div>
+
+    <div id="IconPen" class="hide"></div>
+    <div id="IconEraser" class="hide"></div>
+
+    <!--Preloader : Starts-->
+    <div id="preloaderBlock">
+        <div id="html5Loader" class="col-sm-12">
+            <div id="DvLoaderCont">                
+                <div id="DvLoaderProgress"></div>
+                <img id="loadingFirstImg" src="assets/ui/img/indicator.gif" align="absmiddle" alt="">
+                <div id="DvLoaderProgressBgText"> Loading ... </div>
+                <!-- <div id="pl_startBtn" role="button" tabindex="0">Start</div> -->
+            </div>
+        </div>       
+    </div> 
+    <!--Preloader : Ends-->      
+
+    <audio id="AudBookLink" src="" type="audio/mpeg"></audio>    
+    <script src="assets/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/libs/jquery-ui.js" type="text/javascript"></script>
+    <script src="assets/js/libs/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="assets/js/libs/preloader/jquery.html5Loader.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/preloader/animation/jquery.big-counter.js"></script>
+    <script type="text/javascript" src="assets/js/libs/preloader/Main.class.js"></script>
+    <script type="text/javascript" src="assets/js/libs/preloader/configPreload.js"></script>
+
+    <script src="assets/js/libs/panzoom.min.js"></script>
+    <script src="assets/js/libs/lity.js" type="text/javascript"></script>
+    <script src="assets/js/libs/jquery.textHighlighter.js" type="text/javascript"></script>
+    <script src="assets/js/libs/TextHighlighter.js" type="text/javascript"></script>
+
+    <script id="bookdata" src="assets/data/bookAudData.js" type="text/javascript"></script>
+    <script id="linkdata" src="assets/data/actLink.js" type="text/javascript"></script>
+    
+    <script src="assets/js/toolController.js" type="text/javascript"></script>    
+    <script src="assets/js/penToolController.js" type="text/javascript"></script>
+    
+    
+    <script src="assets/js/audioController.js" type="text/javascript"></script>
+    <script src="assets/js/popupController.js" type="text/javascript"></script>
+    <script src="assets/js/zoomController.js" type="text/javascript"></script>    
+    <script src="assets/js/bmarkController.js" type="text/javascript"></script>
+    <script src="assets/js/noteController.js" type="text/javascript"></script>
+    <script src="assets/js/highController.js" type="text/javascript"></script>
+    <script src="assets/js/pageController.js" type="text/javascript"></script>
+    <script src="assets/js/ICanController.js" type="text/javascript"></script>
+    <script src="assets/js/scormController.js" type="text/javascript"></script>
+
+    <script src="assets/js/SCORM_API_wrapper.js"></script>
+    <script src="assets/js/scorm.js"></script>
+    <script src="assets/js/reader.js" type="text/javascript"></script>       
+      
+    <script src="assets/js/cTools.js"></script>
+    <script src="assets/js/Glossary.js"></script>
+    <!-- <script>console.log=function(){}</script> -->
+</body>
+</html>
