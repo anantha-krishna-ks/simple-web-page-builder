@@ -1,0 +1,429 @@
+/* Card Styles */
+
+/* Subject Card */
+.subject-card {
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  backdrop-filter: blur(10px);
+}
+
+.subject-card:hover {
+  box-shadow: 
+    0 20px 25px -5px hsl(var(--primary) / 0.1),
+    0 10px 10px -5px hsl(var(--primary) / 0.05),
+    0 0 0 1px hsl(var(--primary) / 0.1);
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.subject-card-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.subject-card-icon-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.15);
+}
+
+.subject-card:hover .subject-card-icon-wrapper {
+  transform: scale(1.12) rotate(3deg);
+  box-shadow: 0 8px 20px hsl(var(--primary) / 0.25);
+}
+
+.subject-card-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.subject-card:hover .subject-card-icon {
+  transform: scale(1.05);
+}
+
+.subject-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  text-align: center;
+  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+}
+
+.subject-card:hover .subject-card-title {
+  color: hsl(var(--primary));
+}
+
+/* Ward Selection Card (Parent Dashboard) */
+.ward-card {
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid hsl(var(--border));
+}
+
+.ward-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px -5px hsl(var(--primary) / 0.1);
+  transform: scale(1.02);
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.ward-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ward-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ward-card-icon-wrapper {
+  padding: 1rem;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+}
+
+.ward-card:hover .ward-card-icon-wrapper {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.ward-card-icon {
+  height: 2rem;
+  width: 2rem;
+  color: hsl(var(--primary));
+}
+
+.ward-card-info {
+  flex: 1;
+}
+
+.ward-card-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  transition: color 0.3s;
+}
+
+.ward-card:hover .ward-card-name {
+  color: hsl(var(--primary));
+}
+
+.ward-card-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ward-card-detail {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+}
+
+.ward-card-separator {
+  color: hsl(var(--muted-foreground));
+}
+
+.ward-card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+/* Ward Info Card */
+.ward-info-card {
+  max-width: 42rem;
+  margin: 0 auto;
+  border: 2px solid hsl(var(--border));
+  background: linear-gradient(to bottom right, hsl(var(--primary) / 0.05), hsl(var(--primary) / 0.1));
+}
+
+.ward-info-card-content {
+  padding: 2rem;
+}
+
+.ward-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ward-info-icon-wrapper {
+  padding: 1rem;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 9999px;
+}
+
+.ward-info-icon {
+  height: 2rem;
+  width: 2rem;
+  color: hsl(var(--primary));
+}
+
+.ward-info-name {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.ward-info-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ward-info-detail {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+}
+
+.ward-info-divider {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.ward-info-subject-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ward-info-subject-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+/* Resource Tile Card */
+.resource-tile-card {
+  cursor: pointer;
+  transition: all 0.3s;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+}
+
+.resource-tile-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+}
+
+.resource-tile-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  min-height: 12.5rem;
+}
+
+.resource-tile-icon-wrapper {
+  padding: 1.5rem;
+  background-color: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.resource-tile-card:hover .resource-tile-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.resource-tile-icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.resource-tile-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.resource-tile-description {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 20rem;
+}
+
+/* Resource Item Card */
+.resource-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, hsl(var(--background)), hsl(var(--background)), hsl(var(--muted) / 0.2));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.resource-item-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px -1px hsl(var(--primary) / 0.05);
+  transform: scale(1.02);
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.resource-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.resource-item-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+.resource-item-name {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+
+.resource-item-card:hover .resource-item-name {
+  color: hsl(var(--primary));
+}
+
+/* Activity Item Card */
+.activity-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, hsl(var(--background)), hsl(var(--background)), hsl(var(--muted) / 0.2));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.activity-item-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px -1px hsl(var(--primary) / 0.05);
+  transform: scale(1.02);
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.activity-item-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.activity-item-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.activity-item-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+.activity-item-name {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  transition: color 0.3s;
+  display: block;
+}
+
+.activity-item-card:hover .activity-item-name {
+  color: hsl(var(--primary));
+}
+
+.activity-item-type {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.activity-item-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.activity-date-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.activity-date-icon {
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+/* Responsive Cards */
+@media (min-width: 640px) {
+  .resource-item-card,
+  .activity-item-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.25rem;
+  }
+  
+  .activity-item-header {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .resource-item-name,
+  .activity-item-name {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .parent-section-title {
+    font-size: 2.25rem;
+  }
+  
+  .ward-info-name {
+    font-size: 2.25rem;
+  }
+}
