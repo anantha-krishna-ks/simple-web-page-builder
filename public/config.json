@@ -1,4 +1,4 @@
 {
-    "VITE_API_BASE_URL": "http://localhost:5125",
-    "VITE_ADMIN_URL": "https://oxford-uat.excelindia.com/Oxford-ignite/School/Home.aspx"
+  "VITE_API_BASE_URL": "https://oxford-uat.excelindia.com/oxfordigniteservice",
+  "VITE_ADMIN_URL": "https://oxford-uat.excelindia.com/Oxford-ignite/School/Home.aspx"
 }
