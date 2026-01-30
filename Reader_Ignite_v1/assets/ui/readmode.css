@@ -1,0 +1,1180 @@
+.zoomcont > div span{
+    display: inline-block;
+    font-size: 140% !important;
+    color: #000 !important;
+}
+
+/* edit below */
+
+
+
+
+
+
+
+
+
+
+/* page 1 */
+
+.s1_1{font-size:92px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#CA4827;}
+.s2_1{font-size:99px;font-family:MyriadPro-Bold_b;color:#CA4827;}
+.s3_1{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#D1232A;}
+.s4_1{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#D1232A;}
+.s5_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s6_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s7_1{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#CC6828;}
+.s8_1{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#CC6828;}
+.s9_1{font-size:23px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#231F20;}
+.sa_1{font-size:23px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#231F20;}
+.sb_1{font-size:23px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#231F20;}
+.sc_1{font-size:49px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#D1232A;}
+.sd_1{font-size:37px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.se_1{font-size:37px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.sf_1{font-size:37px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.sg_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.sh_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70;color:#A20910;}
+.si_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sj_1{font-size:23px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.sk_1{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#D1232A;}
+.sl_1{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+.t.v0_1{transform:scaleX(0.93);}
+.t.v1_1{transform:scaleX(0.9);}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: MyriadPro-Bold_b;
+	src: url("fonts/MyriadPro-Bold_b.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 2 */
+
+.s1_2{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s2_2{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s3_2{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s4_2{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#A20910;}
+.s5_2{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#A20910;}
+.s6_2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.s7_2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.s8_2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.s9_2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.sa_2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_4;color:#25408F;}
+.sb_2{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#CA4827;}
+.sc_2{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#CA4827;}
+.sd_2{font-size:26px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.se_2{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sf_2{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sg_2{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_4;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 3 */
+
+.s1_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s2_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s3_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s4_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#C21F25;}
+.s5_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#C21F25;}
+.s6_3{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s7_3{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#CA4827;}
+.s8_3{font-size:26px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s9_3{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sa_3{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.sb_3{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sc_3{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.sd_3{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 4 */
+
+
+.s1_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s2_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s3_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s4_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s5_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_5;color:#231F20;}
+.s6_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_6;color:#231F20;}
+.s7_4{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_7;color:#231F20;}
+.s8_4{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#CA4827;}
+.s9_4{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_4;color:#CA4827;}
+.sa_4{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sb_4{font-size:26px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.sc_4{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.sd_4{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_8;color:#231F20;}
+.se_4{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_4;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_5;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_6;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_6.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_7;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_8;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_8.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 5 */
+
+.s1_5{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s2_5{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s3_5{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s4_5{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s5_5{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_7;color:#C21F25;}
+.s6_5{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#CA4827;}
+.s7_5{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#CA4827;}
+.s8_5{font-size:29px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#CA4827;}
+.s9_5{font-size:26px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.sa_5{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sb_5{font-size:26px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sc_5{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_7;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_7.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 6 */
+
+.s1_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s2_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s3_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s4_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_8;color:#C21F25;}
+.s5_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s6_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_5;color:#231F20;}
+.s7_6{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#C21F25;}
+.s8_6{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.s9_6{font-size:31px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#C21F25;}
+.sa_6{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sb_6{font-size:31px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.sc_6{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sd_6{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.se_6{font-size:31px;font-family:SHREE-DEV-OTF-0708-Bold_i7_4;color:#C21F25;}
+.sf_6{font-size:31px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#C21F25;}
+.sg_6{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_5;color:#231F20;}
+.sh_6{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+.t.v0_6{transform:scaleX(0.969);}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_4;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_5;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_8;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_8.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 7 */
+
+
+.s1_7{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.s2_7{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.s3_7{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.s4_7{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#25408F;}
+.s5_7{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.s6_7{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#FFF;}
+.s7_7{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_5;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_5.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 8 */
+
+
+.s1_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.s2_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.s3_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.s4_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_6;color:#25408F;}
+.s5_8{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.s6_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.s7_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#25408F;}
+.s8_8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s9_8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sa_8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.sb_8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_5;color:#231F20;}
+.sc_8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.sd_8{font-size:34px;font-family:Kokila-Bold_37;color:#25408F;}
+.se_8{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_4;color:#25408F;}
+.sf_8{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+.s1.corrects{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid blue;*/
+    background-color: green; 
+}
+.s1.errors{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid red;*/
+    background-color: red; 
+}
+
+.s2.corrects{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid blue;*/
+    background-color: green; 
+}
+.s2.errors{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid red;*/
+    background-color: red; 
+}
+
+.d.corrects{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid blue;*/
+    background-color: green; 
+}
+.d.errors{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+/*    border-radius: 50%;
+    border: 4px solid red;*/
+    background-color: red; 
+}
+
+.s5_7{
+	cursor: pointer;
+}
+
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: Kokila-Bold_37;
+	src: url("fonts/Kokila-Bold_37.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_4;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_5;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_6;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_6.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_5;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_5.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 9 */
+
+.s1_9{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#A20910;}
+.s2_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#A20910;}
+.s3_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s4_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s5_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#A20910;}
+.s6_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s7_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s8_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#A20910;}
+.s9_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.sa_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.sb_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.sc_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.sd_9{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.se_9{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#FFF;}
+.sf_9{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_4;color:#25408F;}
+.sg_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_9;color:#231F20;}
+.sh_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.si_9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_7;color:#231F20;}
+.sj_9{font-size:34px;font-family:Kokila_8f;color:#231F20;}
+.sk_9{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: Kokila_8f;
+	src: url("fonts/Kokila_8f.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_4;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_7;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_9;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_9.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 10 */
+
+.s1_10{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#FFF;}
+.s2_10{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.s3_10{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s4_10{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s5_10{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s6_10{font-size:34px;font-family:Kokila_8f;color:#231F20;}
+.s7_10{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s8_10{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.s9_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#231F20;}
+.sa_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#231F20;}
+.sb_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.sc_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.sd_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.se_10{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.sf_10{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#FFF;}
+.sg_10{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: Kokila_8f;
+	src: url("fonts/Kokila_8f.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_5;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 11 */
+
+.s1_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(255,248,174,0.1);}
+.s2_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(204,104,40,0.1);}
+.s3_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(209,35,42,0.1);}
+.s4_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(35,31,32,0.1);}
+.s5_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(60,181,76,0.1);}
+.s6_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(245,130,32,0.1);}
+.s7_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(182,87,43,0.1);}
+.s8_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(18,101,104,0.1);}
+.s9_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(104,80,161,0.1);}
+.sa_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(202,72,39,0.1);}
+.sb_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(37,64,143,0.1);}
+.sc_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(0,117,143,0.1);}
+.sd_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(113,194,109,0.1);}
+.se_11{font-size:32px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(35,31,32,0.1);}
+.sf_11{font-size:32px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(209,211,212,0.1);}
+.sg_11{font-size:85px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(203,219,42,0.1);}
+.sh_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(35,31,32,0.1);}
+.si_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(104,80,161,0.1);}
+.sj_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(60,181,76,0.1);}
+.sk_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(201,33,42,0.1);}
+.sl_11{font-size:85px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(35,31,32,0.1);}
+.sm_11{font-size:85px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(182,87,43,0.1);}
+.sn_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(18,101,104,0.1);}
+.so_11{font-size:43px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(254,202,104,0.1);}
+.sp_11{font-size:55px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(242,99,33,0.1);}
+.sq_11{font-size:140px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(201,33,42,0.1);}
+.sr_11{font-size:323px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(104,80,161,0.1);}
+.ss_11{font-size:155px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(11,158,180,0.1);}
+.st_11{font-size:155px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(60,181,76,0.1);}
+.su_11{font-size:140px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(238,28,116,0.1);}
+.sv_11{font-size:140px;font-family:SHREE-DEV-OTF-0708-Bold_47;color:rgba(209,35,42,0.1);}
+.sw_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.sx_11{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#FFF;}
+.sy_11{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.sz_11{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.s10_11{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.s11_11{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.s12_11{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#25408F;}
+.s13_11{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.s14_11{font-size:34px;font-family:SHREE-DEV-OTF-0708_6-;color:#231F20;}
+.s15_11{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.s16_11{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_2;color:#231F20;}
+.s17_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_3;color:#FFF;}
+.s18_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70;color:#FFF;}
+.s19_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_1;color:#FFF;}
+.s1a_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_2;color:#FFF;}
+.s1b_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70;color:#A20910;}
+.s1c_11{font-size:31px;font-family:SHREE-DEV-OTF-0708_70_4;color:#FFF;}
+.s1d_11{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+.t.v0_11{transform:scaleX(0.989);}
+.t.m0_11{transform:matrix(0.766,-0.64,0.64,0.77,0,0);}
+.t.m1_11{transform:matrix(0.374,0.93,-0.93,0.37,0,0);}
+.t.m2_11{transform:matrix(0.642,0.77,-0.77,0.64,0,0);}
+.t.m3_11{transform:matrix(0.999,0.03,-0.03,1,0,0);}
+.t.m4_11{transform:matrix(-0.325,-0.95,0.95,-0.33,0,0);}
+.t.m5_11{transform:matrix(-0.207,-0.98,0.98,-0.21,0,0);}
+.t.m6_11{transform:matrix(0.933,0.36,-0.36,0.93,0,0);}
+.t.m7_11{transform:matrix(-0.939,-0.34,0.34,-0.94,0,0);}
+.t.m8_11{transform:matrix(0.923,-0.38,0.38,0.92,0,0);}
+.t.m9_11{transform:matrix(0.629,-0.78,0.78,0.63,0,0);}
+.t.m10_11{transform:matrix(0.961,0.28,-0.28,0.96,0,0);}
+.t.m11_11{transform:matrix(0.694,-0.72,0.72,0.69,0,0);}
+.t.m12_11{transform:matrix(0.948,0.32,-0.32,0.95,0,0);}
+.t.m13_11{transform:matrix(0.788,-0.62,0.62,0.79,0,0);}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_47;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_47.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_5;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_6-;
+	src: url("fonts/SHREE-DEV-OTF-0708_6-.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_2;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page 12 */
+
+
+.s1{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#FFF;}
+.s2{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#25408F;}
+.s3{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#25408F;}
+.s4{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#25408F;}
+.s5{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#25408F;}
+.s6{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#25408F;}
+.s7{font-size:40px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#FFF;}
+.s8{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_3;color:#231F20;}
+.s9{font-size:34px;font-family:SHREE-DEV-OTF-0708_70;color:#231F20;}
+.sa{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_1;color:#231F20;}
+.sb{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#231F20;}
+.sc{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#231F20;}
+.sd{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_4;color:#231F20;}
+.se{font-size:34px;font-family:SHREE-DEV-OTF-0708_70_8;color:#231F20;}
+.sf{font-size:49px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#4B2811;}
+.sg{font-size:49px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#4B2811;}
+.sh{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7;color:#CC6828;}
+.si{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_3;color:#CC6828;}
+.sj{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_2;color:#CC6828;}
+.sk{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_1;color:#CC6828;}
+.sl{font-size:34px;font-family:SHREE-DEV-OTF-0708-Bold_i7_5;color:#CC6828;}
+.sm{font-size:23px;font-family:GoudySansStd-Bold_i8;color:#231F20;}
+
+
+
+@font-face {
+	font-family: GoudySansStd-Bold_i8;
+	src: url("fonts/GoudySansStd-Bold_i8.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_1;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_2;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_2.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_3;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708-Bold_i7_5;
+	src: url("fonts/SHREE-DEV-OTF-0708-Bold_i7_5.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70;
+	src: url("fonts/SHREE-DEV-OTF-0708_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_1;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_1.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_3;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_3.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_4;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_4.woff") format("woff");
+}
+
+@font-face {
+	font-family: SHREE-DEV-OTF-0708_70_8;
+	src: url("fonts/SHREE-DEV-OTF-0708_70_8.woff") format("woff");
+}
+
+
+
+
+
+.ShreeDevBold {
+	font-family: SHREE-DEV7-0708;
+	font-weight: 620;
+	font-style: normal;
+	
+}
+@font-face {
+	font-family: SHREE-DEV7-0708;
+	src: url("fonts/SHREE-DEV7-0708.woff") format("woff"), url("fonts/SHREE-DEV7-0708.woff2") format("woff2");
+}

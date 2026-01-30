@@ -1,0 +1,148 @@
+.acetate canvas {
+    position: absolute;left: 0;top: 0;z-index: 101;pointer-events:none;
+    /*width: 100%;height: 100%;*/
+}
+.bp-acetate-spotlight-circle .acetate-spotlighting, .bp-acetate-spotlight-rectangle .acetate-spotlighting {
+    display: block;
+    pointer-events: auto;
+    cursor: crosshair;
+    /*cursor: url(ui/spotlight-circle.cur.png) 0 32, crosshair;*/
+}
+
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot{border-radius:0;background-color: #000;}
+.acetate-spotlight-hotspot {
+    position: absolute;
+    box-shadow: 0 0 0 0rem #333333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /*cursor: url(ui/grab.cur.png), grab;*/
+    /*cursor: url(ui/grab.cur.png), -moz-grab;*/
+    /*cursor: url(ui/grab.cur.png), -webkit-grab;*/
+    transition: box-shadow 0.3s ease;
+    display: none;
+    z-index: 101;
+    display: block;
+    cursor: pointer;
+    cursor: url(ui/mouse_hand.png) 25 25, default;
+    /*background-color: rgba(255,0,0,0.5);*/
+}
+
+.acetate.moving .acetate-spotlight-hotspot, .acetate.resizing .acetate-spotlight-hotspot {
+    pointer-events: none;
+    touch-action: none;
+}
+
+.acetate-spotlight-hotspot i {
+    background-image: url(ui/spotlight_resize.png);
+    background-size: 85%;
+    transition: transform 0.3s ease;
+    width: 2.25rem;
+    transform-origin: 50% 50%;
+    box-shadow: 0 0 0 0.1rem rgba(0,0,0,0);
+}
+
+.bp-acetate-spotlight-circle .acetate-spotlight-hotspot i{display:none;}
+.acetate-spotlight-hotspot i.resizer-r {
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+    left: 14.5%; 
+    top: 85.5%;
+    display: block;
+    cursor: ne-resize !important;
+}
+.acetate-spotlight-hotspot:hover i.resizer-r, .acetate.resizing .acetate-spotlight-hotspot i.resizer-r{
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
+}
+.acetate-spotlight-hotspot i:hover:not(.disabled):not(.blocked){
+    /*background-color: rgba(221,219,0,1);*/
+    box-shadow: 0 0 0 0.1rem #fff;
+    cursor: pointer;
+}
+.acetate-spotlight-hotspot i:before {
+    content: " ";
+    display: block;
+    padding-top: 100%;
+}
+.acetate-spotlight-hotspot i{
+    text-align: center;
+    border-radius: 50%;
+    background-color: #D4145A;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 1rem;
+    padding: 0.1rem 0;
+    font-size: 0.8rem;
+    /*border: 0.1rem solid #D4145A;*/
+    position: absolute;
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+}
+.acetate-spotlight-hotspot i{
+    border-radius: 0.4rem;
+    /*border-width: 0.1rem;
+    border-color: rgba(255,255,255,1);
+    border-color: rgba(255,255,255,1);*/
+}
+
+
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot i.resizer-t{
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+    top: 0;
+    left: 50%;
+    cursor: ns-resize !important;
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot:hover i.resizer-t, .bp-acetate-spotlight-rectangle .acetate.resizing .acetate-spotlight-hotspot i.resizer-t{
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.6);
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot i.resizer-r{
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+    top: 50%;
+    left: 100%;    
+    cursor: ew-resize !important;
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot:hover i.resizer-r, .bp-acetate-spotlight-rectangle .acetate.resizing .acetate-spotlight-hotspot i.resizer-r{
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.6);
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot i.resizer-b{
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+    top: 100%;
+    left: 50%;
+    cursor: ns-resize !important;
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot:hover i.resizer-b, .bp-acetate-spotlight-rectangle .acetate.resizing .acetate-spotlight-hotspot i.resizer-b{
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.6);
+}
+
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot i.resizer-l{
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+    top: 50%;
+    left: 0;
+    cursor: ew-resize !important;
+}
+.bp-acetate-spotlight-rectangle .acetate-spotlight-hotspot:hover i.resizer-l, .bp-acetate-spotlight-rectangle .acetate.resizing .acetate-spotlight-hotspot i.resizer-l{
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.6);
+}
+
+.acetate-spotlighting, .acetate-drawing{display: none;}
+
+.bp-acetate-draw .acetate-drawing{display: block;}
+.bp-acetate-draw .acetate-drawing{
+    pointer-events:auto;
+    /*cursor: crosshair;*/
+    cursor: url('ui/Pen_pointer.png') 2 48, crosshair;
+}
+canvas.acetate-canvas{pointer-events: auto;}
+.acetate {
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10001;
+    position: relative; /* box-shadow: inset 0 0 0 2rem rgba(255, 255, 255, 0.5); */
+}
+.bp-acetate-spotlight-circle .acetate-spotlighting canvas, .bp-acetate-spotlight-rectangle .acetate-spotlighting canvas, .bp-acetate-draw .acetate-drawing canvas, .bp-acetate-erase .acetate-drawing canvas{
+    display: block;
+    pointer-events: auto;
+}
+
