@@ -1,0 +1,6 @@
+VITE_API_BASE_URL=https://oxford-uat.excelindia.com/oxfordigniteservice
+VITE_ADMIN_URL=https://oxford-uat.excelindia.com/Oxford-ignite/School/Home.aspx
+# http://localhost:5125
+# https://oxfordignite.co.in/oxfordigniteservice
+# https://oxford-uat.excelindia.com
+#https://oxford-uat.excelindia.com/oxfordigniteservice
