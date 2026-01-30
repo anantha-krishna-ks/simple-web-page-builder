@@ -24,12 +24,28 @@ import NewPassword from "./pages/NewPassword";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const VITE_BASE_URL = (import.meta.env.BASE_URL || "/");
+// React Router expects basename without a trailing slash (except for root)
+const ROUTER_BASENAME = VITE_BASE_URL === "/" ? "" : VITE_BASE_URL.replace(/\/$/, "");
+
+const ensureBasePath = () => {
+  // If the app is served under a sub-path (e.g. /oxfordignite/) but the user lands on `/`,
+  // React Router won't match routes and the page can appear blank. Normalize the URL.
+  if (VITE_BASE_URL !== "/" && !window.location.pathname.startsWith(VITE_BASE_URL)) {
+    const nextUrl = `${VITE_BASE_URL}${window.location.search}${window.location.hash}`;
+    window.history.replaceState({}, "", nextUrl);
+  }
+};
+
+const App = () => {
+  ensureBasePath();
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/oxfordignite" >
+      <BrowserRouter basename={ROUTER_BASENAME}>
         <Routes>
           <Route path="/Navigation" element={<NavigationControls />} />
           <Route path="/" element={<Login />} />
@@ -54,6 +70,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
