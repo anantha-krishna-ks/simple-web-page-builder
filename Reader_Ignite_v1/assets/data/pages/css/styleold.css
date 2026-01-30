@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'oupi_font_b';
+    src: url("../../../ui/fonts/Advantage2-B.TTF") format('truetype'), url("../../../ui/fonts/Advantage2-B.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+#tocTitle {
+  margin-left: 100px;
+  margin-top: 80px;
+  width: 300px;
+}
+.tocList {
+  margin: 0 50px 0 100px;
+}
+.tocList .Node {
+  width: 100%;
+  margin-top: 20px;
+  font-family: LucidaSansStd;
+  color: #000000;
+}
+.tocList div.Node > span {
+  cursor: pointer;
+  font-size: 35px;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+.tocList div.Node > span:first-child {
+  margin-right: 30px;
+}
+.tocList div.Node > span.pgNos {
+  float: right;
+  width: 60px;
+}
+
+.tocList .SubNode {
+  width: 100%;
+  margin-top: 10px;
+  font-family: LucidaSansStd;
+  color: #000000;
+}
+.tocList div.SubNode > span {
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+.tocList div.SubNode > span:first-child {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.tocList div.SubNode > span.pgNos {
+  float: right;
+  width: 60px;
+  font-size: 35px;
+}
+
+.tocList img {
+  height: 30px;
+  vertical-align: middle;
+  margin-top: 8px;
+}
+
+.IconList {
+  margin: 0 50px 0 100px;
+  bottom: 100px;
+  position: absolute;
+  left: 0px;
+}
+.IconList .Node {
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: LucidaSansStd;
+  color: #000000;
+}
+.IconList div.Node > span {
+  font-size: 35px;
+  pointer-events: none;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+.IconList div.Node > span:first-child {
+  margin-right: 30px;
+}
+.IconList div.Node > span.pgNos {
+  float: right;
+  width: 60px;
+}
+.IconList img {
+  height: 30px;
+  vertical-align: middle;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.toggleIconBlock {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  width: 80px;
+  height: 40px;
+  color: transparent;
+  background-color: #3eaa47;
+  border-radius: 30px;
+  font-size: 0;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 200ms linear;
+  border: 4px solid #000000;
+}
+.toggleIconBlock::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  /* border: 2px solid #000; */
+  transition: all 200ms linear;
+  left: 41px;
+}
+.toggleIconBlock.active::after {
+  left: 4px;
+  background-color: #000000 !important;
+}
+
+.toggleIconBlock.active {
+  background-color: #b8c0d4 !important;
+}
+/* Lets go */
+.letsgo {
+  position: absolute;
+  background: url("../icons/playbutton.svg") no-repeat 50% 50%
+    rgba(255, 255, 255, 0);
+  background-size: 25%;
+  z-index: 2;
+  cursor: pointer;
+  top: 300px;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+
+  animation: loopZoom 1000ms linear infinite;
+}
+
+@keyframes loopZoom {
+  0% {
+    background-size: 25%;
+  }
+  50% {
+    background-size: 27%;
+  }
+  100% {
+    background-size: 25%;
+  }
+}
+.IconVideo {
+  position: absolute;
+  background: url("../icons/Video.png") no-repeat;
+  background: url("../icons/video.svg") no-repeat;
+  z-index: 2;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}
+.IconPdf {
+  position: absolute;
+  background: url("../icons/pdfImg.png") no-repeat;
+  background: url("../icons/pdf.svg") no-repeat;
+  z-index: 2;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}
+.IconInt {
+  position: absolute;
+  background: url("../icons/interactivity.png") no-repeat;
+  background: url("../icons/interactivity.svg") no-repeat;
+  z-index: 2;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}
+.IconGame {
+  position: absolute;
+  background: url("../icons/Game.png") no-repeat;
+  background: url("../icons/game.svg") no-repeat;
+  z-index: 2;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}
+
+.letsgo_act {
+  position: absolute;
+  background: url("../icons/actIcon.gif") no-repeat 50% 50%
+    rgba(255, 255, 255, 0);
+  background-size: 100%;
+  z-index: 2;
+  cursor: pointer;
+  top: 300px;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+/* Enlarge Image Click Element */
+.enlargeImge {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Flip Numerals */
+.numeralWrap {
+  position: relative;
+  height: 200px;
+  perspective: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  transform-style: preserve-3d;
+}
+.card div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  animation: flip 10s linear infinite;
+  opacity: 1;
+  top: 0;
+  color: #ca4727;
+  text-shadow: #ffffff 2px 2px 0px, #8a8c8f 5px 5px 1px;
+  /* background: yellow; */
+}
+
+/* .card .one { background: pink; } */
+.card .two {
+  animation-delay: 5s;
+  opacity: 0;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(-90deg);
+    opacity: 1;
+  }
+  10% {
+    transform: rotateY(0deg);
+  }
+  40% {
+    transform: rotateY(0deg);
+  }
+  50.03% {
+    transform: rotateY(90deg);
+    opacity: 1;
+  }
+  50.04% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* enlargeImge */
+.listeningExercises {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.ClsCurPointer {
+  cursor: pointer !important;
+}
+
+/* LR's Tooltip */
+div[class*="toolTip_"]::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  transform: translate(0, -50%);
+  white-space: nowrap;
+  background-image: url("../icons/toolTip.png");
+  width: 130px;
+  height: 50px;
+  text-align: center;
+  line-height: 54px;
+  font-size: 22px;
+  padding: 0 11px 0 23px;
+  pointer-events: none;
+  box-sizing: border-box;
+  font-family: "oupi_font_b";
+  opacity: 0;
+}
+div[class*="toolTip_"]:hover::after {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
