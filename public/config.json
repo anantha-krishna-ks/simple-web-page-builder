@@ -1,0 +1,4 @@
+{
+  "VITE_API_BASE_URL": "https://oxfordignite.co.in/oxfordigniteservice",
+  "VITE_ADMIN_URL": "https://oxford-uat.excelindia.com/Oxford-ignite/School/Home.aspx"
+}
