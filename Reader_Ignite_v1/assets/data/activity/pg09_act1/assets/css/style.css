@@ -1,0 +1,256 @@
+/*Player CSS : Starts*/
+@font-face {
+	font-family: "HeinemannSchool";
+	src: url("fonts/HeinemannSchool.eot");
+	src: url("fonts/HeinemannSchool.eot?#iefix") format("embedded-opentype"),
+	  url("fonts/HeinemannSchool.woff") format("woff"),
+	  url("fonts/HeinemannSchool.woff2") format("woff2"),
+	  url("fonts/HeinemannSchool.ttf") format("truetype");
+}
+
+@font-face {
+font-family: "HeinemannSchool-BlackItalic";
+src: url("fonts/HeinemannSchool-BlackItalic.eot");
+src: url("fonts/HeinemannSchool-BlackItalic.eot?#iefix") format("embedded-opentype"),
+	url("fonts/HeinemannSchool-BlackItalic.woff") format("woff"),
+	url("fonts/HeinemannSchool-BlackItalic.woff2") format("woff2"),
+	url("fonts/HeinemannSchool-BlackItalic.ttf") format("truetype");
+}
+  
+  
+@font-face {
+font-family: "HeinemannSchool-Black";
+src: url("fonts/HeinemannSchool-Black.eot");
+src: url("fonts/HeinemannSchool-Black.eot?#iefix") format("embedded-opentype"),
+	url("fonts/HeinemannSchool-Black.woff") format("woff"),
+	url("fonts/HeinemannSchool-Black.woff2") format("woff2"),
+	url("fonts/HeinemannSchool-Black.ttf") format("truetype");
+}
+
+body{-webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    overflow:hidden;
+	font-family: "HeinemannSchool";
+}
+
+.preloaderHolder { position: absolute; width: 1024px; height: 768px; margin: auto; left: 0px; right: 0px; background-color: #ffffff;}
+
+.preloaderImage { width: 318px; height: 93px; background-image: url('../images/loader.png'); background-repeat: no-repeat; margin-right: auto; margin-left: auto; margin-top: 300px;
+	animation: playLoading 1s steps(7) infinite;
+	-o-animation: playLoading 1s steps(7) infinite;
+	-ms-animation: playLoading 1s steps(7) infinite;
+	-moz-animation: playLoading 1s steps(7) infinite;
+	-webkit-animation: playLoading 1s steps(7) infinite;
+}
+@keyframes playLoading { 100% {background-position: -2226px 0px;}}
+@-o-keyframes playLoading { 100% {background-position: -2226px 0px;}}
+@-ms-keyframes playLoading { 100% {background-position: -2226px 0px;}}
+@-moz-keyframes playLoading { 100% {background-position: -2226px 0px;}}
+@-webkit-keyframes playLoading { 100% {background-position: -2226px 0px;}}
+
+#stage {width: 1024px;height: 768px; position: absolute; top:0; left:0px; right: 0px; bottom:0px;  margin: 0 auto; /*background: url('../images/mainBg2.png') no-repeat;*/}
+div#DvBodyCont{width:1024px; height: 100%; position: absolute; top:0px; left:0px;}
+
+
+#headerSection { 
+	width: 1024px; height: 115px; position: absolute; top:0px; left:0px; /*background: rgba(0,0,0,0.5);*/
+	box-sizing: content-box; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; -ms-box-sizing: content-box; -o-box-sizing: content-box;	
+}
+
+div#headerTitle {
+  width:810px; height: 72px; position: absolute; top:28px; left:158px;
+ 
+  color:#000; text-align: left; line-height: 36px;
+  font-weight: bold !important;
+}
+
+div#DvActType {
+	width: 302px; height: 73px; position: absolute; top:0px; left:628px;
+	background-image: url(../images/headerLabelBg.png); background-repeat: no-repeat; 
+	font-family: "HeinemannSchool-Black";
+	font-size: 28px; color:#ffffff; font-style: normal; font-weight: bold; text-align: center; font-weight: bold; line-height: 72px;
+}
+div#DvAudInstruct{width:60px; height: 60px; position: absolute; top:31px; left: 95px; cursor: pointer; background-image: url('../images/iconAud.png');
+  background-repeat: no-repeat;}
+.ClsAudioStop{background-position: 0 0 ;}
+.ClsAudioPlay{background-position: 0 0 ;}
+#mainSec { width:890px; height:555px; position: absolute; top: 90px; left:68px; /*background: rgba(0,0,0,0.5);*/}
+
+
+/*-- Activity : Match : CSS : Starts --*/
+.frontPage { /*background-image: url("../common/images/match/splash.png"); */}
+
+.ClsMatchContainer1{ 
+	width:100%; height:580px; position:absolute; top:0px; left:0px; padding:0px; margin:0px; font-size:28px; /*background: rgba(0,0,0,0.01);*/
+	overflow-y: auto; overflow-x: hidden;
+}
+    
+.ClsMBlocker{width:100%; height:100%; position:absolute; top:0px; left:0px; /*background-color:rgba(0,0,0,0.5);*/}
+.ClsInitial{border:2px solid #00636c; /*@include border-radius(15px);*/}
+.ClsSelect{border:4px solid #6f0d33;  
+  border-radius: 15px; -webkit-border-radius: 15px; -ms-border-radius: 15px; -moz-border-radius: 15px; -o-border-radius: 15px;
+}
+	      	
+/* .ClsSet1Text{font-size:28px; font-weight:normal; text-align:center; line-height:70px; padding-top: 0px; color:#046b4d;}
+.ClsSet2Text{font-size:28px; font-weight:normal; text-align:center; line-height:70px; padding-top: 0px; color:#046b4d;} */
+.ClsSet1Img{width:auto; height:70px;}
+.ClsSet2Img{width:auto; height:70px;}
+.ClsSet1Icon{position:absolute; width:auto; height:70px; top:-20px; right:-40px;}
+.ClsSet2Icon{position:absolute; width:auto; height:70px; top:-20px; right:-40px;}
+
+.ClsSet1Select{
+  position:absolute; width:39px; height:39px; top:50%; right:-18px; /*border:2px solid #00636c;*/ 
+  border-radius: 50%; -webkit-border-radius: 50%; -ms-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;
+  margin-top: -17px; background-image: url(../images/optionPoint1.png); background-position: 0px 0px;
+}
+
+
+.ClsSet1SelDot{position:absolute; width:15px; height:15px; top:12px; left:12px; cursor: pointer; 
+  border-radius: 50%; -webkit-border-radius: 50%; -ms-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;   
+}
+
+.ClsSet1SelDot.ClsDisableDot{background: #ffffff;}
+
+.ClsSet1SelRes{position:absolute; width:39px; height:39px; top:0px; left:0px; background-image: url(../images/optionPoint1.png);}			
+.ClsSet1SelRes.ClsCorrect{background-image: url(../images/optionPoint2.png);}			
+.ClsSet1SelRes.ClsInCorrect{background-image: url(../images/optionPoint3.png);}
+
+
+.ClsSet2Select{
+  position:absolute; width:39px; height:39px; top:50%; right:330px; 
+  border-radius: 50%; -webkit-border-radius: 50%; -ms-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;
+  margin-top: -17px; background-image: url(../images/optionPoint1.png); background-position: 0px 0px;
+}
+
+.posRel { position: relative;}
+
+.ClsSet2SelDot{position:absolute; width:15px; height:15px; top:12px; left:12px; cursor: pointer; 
+ border-radius: 50%; -webkit-border-radius: 50%; -ms-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;   
+}  
+
+.ClsSet1SelDot.ClsEnableDot, .ClsSet2SelDot.ClsEnableDot{background: #79e5d4;}
+.ClsSet2SelDot.ClsDisableDot{background: #ffffff;}
+
+/*-- Set1 --*/
+.ClsTable{ display: table; vertical-align: middle; max-height: 94px; width: 100%;}
+
+.ClsTableCell { display: table-cell; position: relative; vertical-align: middle; }
+.ClsContSet1{width:352px; height:520px; position:absolute; top:0px; left:29px; /*background: rgba(0,0,0,0.5);*/}
+.ClsSet1Element{width:100%; display: block; min-height:94px; text-align:center; cursor:pointer;} 
+
+/*-- Line Container --*/				
+.ClsContLine{width:890px; height:520px; position: absolute; top: 0px; left:0px;}
+.ClsContSet2{width:352px; height:520px; position:absolute; top:0px; left:508px; /*left:540px; background: rgba(0,0,0,0.5);*/}
+.ClsSet2Element{width:100%; display: block; min-height:94px;  text-align:center; cursor:pointer;}
+
+.ClsSet1Element, .ClsSet2Element { 
+  border: 4px solid #e7eeae;
+    border-radius: 30px;
+    background-color: #fff;
+}
+.ClsSet1Select, .ClsSet2Select  { /*border:6px solid #4397ff;*/ }
+
+.navigationPointLIst {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+.navigationPoint {
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: #006579;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #006579;
+}
+
+.selectedPoint {
+  background-color: #FFFFFF;
+}
+
+/* .ClsTable.ClsCellHeight0 { height: 300px;}
+.ClsTable.ClsCellHeight1 { height: 250px;}
+.ClsTable.ClsCellHeight2 { height: 238px;}
+.ClsTable.ClsCellHeight3 { height: 154px;}
+.ClsTable.ClsCellHeight4 { height: 112px;}
+.ClsTable.ClsCellHeight5 { height: 87px;}
+.ClsTable.ClsCellHeight6 { height: 50px;}
+.ClsTable.ClsCellHeight7 { height: 30px;} */
+
+.ClsTable.ClsCellHeight0 { height: 94px;}
+.ClsTable.ClsCellHeight1 { height: 94px;}
+.ClsTable.ClsCellHeight2 { height: 94px;}
+.ClsTable.ClsCellHeight3 { height: 94px;}
+.ClsTable.ClsCellHeight4 { height: 94px;}
+.ClsTable.ClsCellHeight5 { height: 94px;}
+.ClsTable.ClsCellHeight6 { height: 94px;}
+.ClsTable.ClsCellHeight7 { height: 94px;}
+
+/*-- Activity : Match : CSS : Ends --*/
+
+/*Footer css : Starts*/
+#FooterSection{ width: 890px; height: 68px; position: absolute; bottom:20px; left:68px; /*background:rgba(0,0,0,0.5);*/}
+
+
+div#DvMReset{
+  position: absolute;
+    left: 611px;
+}
+div#DvMSubmit{width:249px; height: 68px; position: absolute; top:0px; left:321px; background: url('../images/actSubmitBtn.png');}
+div#DvMShowAns{width:249px; height: 68px; position: absolute; top:0px; left:320px;}
+
+div#DvMReset.ClsDisableBtn{background-position: 0px 0px; }
+div#DvMReset.ClsEnableBtn{background-position: -249px 0px; }
+
+
+div#DvMSubmit.ClsDisableBtn{background-position: 0px 0px; }
+div#DvMSubmit.ClsEnableBtn{background-position: -249px 0px; }
+
+
+div#DvMShowAns.ClsDisableBtn{background-position: 0px 0px; }
+div#DvMShowAns.ClsEnableBtn{background-position: -249px 0px; }
+
+
+.ClsClickBtn{height: 70px; position: absolute; top:0px; left:0px; cursor: pointer; border-radius:35px; -webkit-border-radius:35px; -moz-border-radius:35px; -ms-border-radius:35px; -o-border-radius:35px; 
+  background: #e7eeae;
+  color: #000;
+  font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+div#DvMReset #DvMResetClick{width:250px;}
+div#DvMSubmit #DvMSubmitClick{width:250px;}
+div#DvMShowAns #DvMShowAnsClick{width:250px;}
+/*Footer css : Ends*/
+
+/*-- change font size here --*/
+div#headerTitle {font-size: 24px;}
+.ClsSet1Text{font-size:28px; font-weight:normal; text-align:center; color:#000; padding: 5px 25px; box-sizing: border-box; line-height:70px;}
+.ClsSet2Text{font-size:28px; font-weight:normal; text-align:center; color:#000;  padding: 5px 25px; box-sizing: border-box; /*line-height:70px;*/}
+
+/*-- Increase - Decrease distance between options --*/
+.ClsSet1Element, .ClsSet2Element{margin-bottom:10px;} 
+
+.ClsSet1Select,
+.ClsSet2Select{
+  display: none;
+}
+.ClsContLine div {
+  border-width: 4px !important;
+}
+
+
+
+
+
+
+
+    

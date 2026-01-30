@@ -1,0 +1,196 @@
+body, html{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;   
+}
+
+canvas{
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body{
+    /*border: 1px solid;*/
+    box-sizing: border-box;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+div#DvMainCont{
+    width:100%; height:100%;
+    position: absolute; top:0px; left:0px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+div#DvMainActCont{
+    width:962px; height:648px;
+    position: absolute; top:0px; left:0px; right: 0px; bottom: 0px; margin: auto;
+    background-color: #FBEBD3;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+div#DvActBg{    
+    position: absolute;
+    background-image: url('../data/images/actBg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+div#DvToolCont{
+    width: 65px; height: 292px;
+    position: absolute; top:169px; right:0px;
+    background-color: #f8a478;
+
+    border-top-left-radius: 15px;
+    -webkit-border-top-left-radius: 15px;
+    -moz-border-top-left-radius: 15px;
+    -ms-border-top-left-radius: 15px;
+    -o-border-top-left-radius: 15px;
+
+
+    border-bottom-left-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -moz-border-bottom-left-radius: 15px;
+    -ms-border-bottom-left-radius: 15px;
+    -o-border-bottom-left-radius: 15px;
+}
+
+.ClsPartLine{
+    width: 40px; height: 3px;
+    position: absolute; left:14px;
+    background-color: #ffffff;
+}
+
+div#DvLine0{top:115px;}
+div#DvLine1{top:175px;}
+div#DvLine2{top:231px;}
+
+.ClsBtnColour{
+    width: 12px; height: 12px;
+    position: absolute;
+    border:3px solid #ffffff;
+    border-radius: 50%; -webkit-border-radius: 50%;
+    -moz-border-radius: 50%; -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+.ClsBtnColour:hover{
+    transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1);
+}
+.ClsBtnColour.ClsSelected{border:3px solid yellow !important; cursor: default !important;}
+
+div#DvBtnColor0{top:22px; left:15px; background-color: #000000;}
+div#DvBtnColor1{top:22px; left:35px; background-color: #ff0031;}
+div#DvBtnColor2{top:44px; left:15px; background-color: #23ca00;}
+div#DvBtnColor3{top:44px; left:35px; background-color: #0891fe;}
+div#DvBtnColor4{top:66px; left:15px; background-color: #C70039;}
+div#DvBtnColor5{top:66px; left:35px; background-color: #FFC300;}
+div#DvBtnColor6{top:88px; left:15px; background-color: #5533FF;}
+div#DvBtnColor7{top:88px; left:35px; background-color: #FF5733;}
+
+div#DvBtnPen{
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 130px;
+    left: 18px;
+    background-image: url('../ui/images/pencil.png'); background-repeat: no-repeat;
+    background-size: contain; background-position: center center;
+    cursor: pointer;
+}
+div#DvBtnPen:hover{
+    transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1);
+}
+div#DvBtnPen.ClsActive{background-image: url('../ui/images/pencilActive.png') !important; cursor: default;}
+
+div#DvBtnEraser{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 190px;
+    left: 18px;
+    background-image: url('../ui/images/eraser.png'); background-repeat: no-repeat;
+    background-size: contain; background-position: center center;
+    cursor: pointer;
+}
+div#DvBtnEraser:hover{
+    transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1);
+}
+div#DvBtnEraser.ClsActive{background-image: url('../ui/images/eraserActive.png') !important; cursor: default;}
+
+div#DvBtnReset{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 248px;
+    left: 19px;
+    background-image: url('../ui/images/reset.png'); background-repeat: no-repeat;
+    background-size: contain; background-position: center center;
+    cursor: pointer;
+}
+
+div#DvBtnReset:hover{
+    transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1);
+}
+
+div#DvMainActCont #DrawCanv{    
+    position: absolute;
+    display: inline-block;    
+}
+
+
+div#IconPen{
+    width:36px; height:36px; position: fixed; top:0px; left:0px;
+    background-image: url('../ui/images/pencilActive.png');
+    background-repeat: no-repeat; 
+    background-size: contain; background-position: center center;
+    pointer-events: none;
+    top: -100px; left: -100px;
+}
+
+div#IconPen.show{display: block;}
+div#IconPen.hide{display: none;}
+
+div#IconEraser{
+    width:32px; height:32px; position: fixed; top:0px; left:0px;
+    background-image: url('../ui/images/eraserActive.png'); 
+    background-repeat: no-repeat; 
+    background-size: contain; background-position: center center;
+    pointer-events: none;    
+    /* transform: rotate(-90deg); -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); */
+    top: -100px; left: -100px;
+}
+
+div#IconEraser.show{display: block;}
+div#IconEraser.hide{display: none;}
+
+div#DvAudIcon{
+    width: 40px; height: 37px; position: absolute;  
+    background-image: url('../ui/images/audIcon.png'); 
+    background-repeat: no-repeat; 
+    background-size: contain; background-position: center center;
+    cursor: pointer;
+}
+
+div#DvAudIcon.ClsDisable{
+    cursor: default; pointer-events: none; opacity: 0.5;
+}
+
+/*-- Change these values : Starts--*/
+div#DvAudIcon{top:151px; left:184px;} /*-- set audio icon position --*/
+div#DvActBg{width:883px; height:600px; top:35px; left:0px;} /*-- set background image position --*/
+div#DvMainActCont #DrawCanv{
+    width: 881px;
+    height: 606px;    
+    top: 41px;
+    left: 14px;    
+    border-radius: 30px; -webkit-border-radius: 30px; -moz-border-radius: 30px; -ms-border-radius: 30px; -o-border-radius: 30px;    
+    /* background-color: #ccc; opacity: 0.5; */ 
+}
+
+/*-- Change these values : Ends--*/

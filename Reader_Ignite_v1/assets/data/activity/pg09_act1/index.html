@@ -1,0 +1,133 @@
+<html ng-app="iwb">
+	<head>
+		<title>Matching</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		
+		<script type="text/javascript" src="assets/libs/com/libs/jquery-2.1.3.min.js"></script>
+		
+		<script type="text/javascript" src="assets/libs/com/libs/angular.js"></script>
+		<script type="text/javascript" src="assets/libs/com/libs/angular-route.min.js"></script>
+		<script type="text/javascript" src="assets/libs/com/libs/angular-animate.min.js"></script>
+		<script type="text/javascript" src="assets/libs/com/libs/angular-sanitize.min.js"></script>		
+		
+		<script type="text/javascript" src="assets/data/config.js"></script>
+
+		<script type="text/javascript" src="assets/libs/com/iwb/core/iwb.js"></script>		
+		<script type="text/javascript" src="assets/libs/com/iwb/core/iwbController.js"></script>
+		<script type="text/javascript" src="assets/libs/com/iwb/core/iwbDirective.js"></script>
+		<script type="text/javascript" src="assets/libs/com/iwb/core/iwbFactory.js"></script>
+		<script type="text/javascript" src="assets/libs/com/iwb/core/iwbService.js"></script>		
+		<script>    
+			document.addEventListener('touchmove', function(e) {e.preventDefault();}, { passive: false });
+			var lastTouchEnd = 0;
+			document.addEventListener('touchend', function (event) {
+				var now = (new Date()).getTime();
+				if (now - lastTouchEnd <= 50) {event.preventDefault();}
+				lastTouchEnd = now;
+			}, { passive: false });  
+    	</script>
+
+		<!-- Change below section as per required activity type -->
+		<!-- START HERE -->
+		<script type="text/javascript" src="assets/libs/com/iwb/activities/dnd/ngDragDrop.js"></script>		
+		<script type="text/javascript" src="assets/scripts/activityController.js"></script>		
+		<script type="text/javascript" src="assets/data/data.js"></script> 		
+		<!-- END HERE -->
+	</head>
+	<body ng-controller="IwbController as iwbController" stop-screen-move on-resize ng-style="style()">
+		<div ng-switch="isLoading">
+			<!-- <div class="preloaderHolder" ng-switch-when="true">
+				<div class="preloaderImage"></div>
+			</div> -->
+			<div ng-switch-when="false" ng-switch="isSuccessful">
+				<div ng-switch-when="true">
+					<!-- player : main container : starts -->
+					<section id="stage" ng-controller="MatchController">
+						<div id="DvBodyCont">							
+							<header id="headerSection">	
+								<!-- <div id="DvActType">Matching</div> 							  -->
+								<div id="headerTitle" class="unselectable" ng-bind-html="ArrActData.instruct"></div>
+								<div id="DvAudInstruct" ng-class="ClsAudInstruct" ng-click="PlayAudInstruct()"></div>	
+								<div id="DvHeaderBlocker" class="ClsMBlocker" ng-show="IsHeaderBlocker === true"></div>						
+							</header>
+
+							<footer id="FooterSection">
+								<div id="DvMReset" ng-class="ClsReset">
+									<div id="DvMResetClick" class="ClsClickBtn" ng-click="ResetActivity()">Reset</div>
+								</div>
+								<!-- <div id="DvMSubmit" ng-class="ClsSubmit">
+									<div id="DvMSubmitClick" class="ClsClickBtn" ng-click="CheckAnswer()"></div>
+								</div> -->
+								<div id="DvMShowAns" ng-class="ClsShow">
+									<div id="DvMShowAnsClick" class="ClsClickBtn" ng-click="ShowAnswer()">Show Answer</div>
+								</div>
+								<div id="DvFooterBlocker" class="ClsMBlocker" ng-show="IsFooterBlocker === true"></div>
+							</footer>
+							<main id="mainSec">
+								<!-- <div ng-view ></div> -->
+								<!-- Activity Content - Starts --> 
+								<div class="ClsMatchContainer1">									
+									<!-- Line Containers :: Starts -->
+									<div id='DvContLine' class="ClsContLine"></div>       
+									<!-- Line Containers :: Ends -->
+									
+									<!-- Set1 Container :: Starts -->
+									<div id='DvContSet1' class='ClsContSet1'>       
+										<div id='DvSet1_{{obj.ID}}' class="ClsSet1Element" ng-repeat="obj in ArrSet1" ng-mouseup="OnSet1MouseUp($event,'DvSet1_SelDot',obj.ID,'DvContSet1')">
+											<div class="ClsTable" ng-class="ArrClsCellHeight[CellLengthCount]">
+												<div class="ClsTableCell">
+													<div class="posRel" >
+														<div class="ClsSet1Text" ng-show="ArrActData.Set1Status.Text === true" ng-bind-html="obj.Text"></div>
+														<img class="ClsSet1Img"  ng-src="{{obj.ImgSrc}}" ng-show="ArrActData.Set1Status.Image === true" /> 
+														<div id="DvSet1_Select{{obj.ID}}" class="ClsSet1Select" >
+															<!-- <div id="DvSet1_SelDot{{obj.ID}}" class="ClsSet1SelDot" ng-class="ArrSet1[{{obj.ID}}].NgClass"></div> -->
+															<div id="DvSet1_SelDot{{obj.ID}}" class="ClsSet1SelDot" ng-class="ArrInfoDot1[{{obj.ID}}].NgClass"></div>
+															<div id="DvSet1_SelResult{{obj.ID}}" class="ClsSet1SelRes" ng-show="ArrInfoDot1[{{obj.ID}}].ResStatus === true" ng-class="ArrInfoDot1[{{obj.ID}}].ResClass"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>             
+									</div>   
+									<!-- Set1 Container :: Ends -->
+									
+									<!-- Set2 Container :: Starts -->
+									<div id='DvContSet2' class='ClsContSet2'>
+										<div id='DvSet2_{{obj.ID}}' class="ClsSet2Element" ng-repeat="obj in ArrSet2" ng-mouseup="OnSet2MouseUp($event,'DvSet2_SelDot',obj.ID,'DvContSet2')">
+											<div class="ClsTable" ng-class="ArrClsCellHeight[CellLengthCount]">
+												<div class="ClsTableCell">
+													<div class="posRel" >
+														<div class="ClsSet2Text" ng-show="ArrActData.Set2Status.Text === true" ng-bind-html="obj.Text"></div>
+														<img class="ClsSet2Img" ng-src="{{obj.ImgSrc}}" ng-show="ArrActData.Set2Status.Image === true" />
+														<div id="DvSet2_Select{{obj.ID}}" class="ClsSet2Select">
+															<!-- <div id="DvSet2_SelDot{{obj.ID}}" class="ClsSet2SelDot" ng-class="ArrSet2[{{obj.ID}}].NgClass"></div> -->
+															<div id="DvSet2_SelDot{{obj.ID}}" class="ClsSet2SelDot" ng-class="ArrInfoDot2[{{obj.ID}}].NgClass"></div>
+														</div>                  
+													</div>
+												</div>
+											</div>        
+										</div>														
+									</div> 
+									<!-- Set2 Container :: Ends -->  									
+									
+									<audio id="instructAud" src="assets/data/audios/actAudio.mp3" type="audio/mpeg">																				
+										Your browser does not support the audio tag.
+									</audio>								
+
+								<!-- Activity Content - Ends -->	
+								<div id="DvActBlocker" class="ClsMBlocker" ng-show="IsActBlocker === true"></div>																					
+							</main>															
+						</div>																			
+					</section>
+					<!-- player : main container : ends -->
+				</div>
+				<div ng-switch-when="false"></div>
+			</div>
+		</div>
+	</body>
+</html>
