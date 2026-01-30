@@ -48,8 +48,8 @@ interface CombinedOption {
 
 interface HeaderProps {
   onLogout?: () => void;
-  isHeaderCollapsed?: boolean;
-  onToggleHeader?: () => void;
+   isHeaderCollapsed: boolean;
+  onToggleHeader: () => void;
   role?: "teacher" | "student";
   combinedSelection?: string;
   onCombinedChange?: (value: string) => void;
@@ -79,9 +79,9 @@ interface HeaderProps {
 }
 
 const Header = ({ 
-  onLogout, 
-  isHeaderCollapsed = false, 
-  onToggleHeader = () => {},
+   onLogout, 
+  isHeaderCollapsed, 
+  onToggleHeader,
   role = "student",  // Add default values for optional props
   combinedSelection = "",
   onCombinedChange = () => {},
