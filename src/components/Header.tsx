@@ -80,7 +80,7 @@ interface HeaderProps {
 
 const Header = ({ 
   onLogout, 
-  isHeaderCollapsed = false,
+  isHeaderCollapsed = false, 
   onToggleHeader = () => {},
   role = "student",  // Add default values for optional props
   combinedSelection = "",
