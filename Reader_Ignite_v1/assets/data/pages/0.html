@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body style="margin: 0;" ng-controller="ngCtrl">
+
+	<div id="p0" style="overflow: hidden; position: relative; background-color: white; width: 886px; height: 1194px; border:0px solid #000000; box-sizing: border-box;">
+		<!-- Begin shared CSS values -->
+		<style class="shared-css" type="text/css">
+			.t {
+				-webkit-transform-origin: bottom left;
+				-ms-transform-origin: bottom left;
+				transform-origin: bottom left;
+				-webkit-transform: scale(0.25);
+				-ms-transform: scale(0.25);
+				transform: scale(0.25);
+				z-index: 2;
+				position: absolute;
+				white-space: pre;
+				overflow: visible;
+				line-height: 1.5;
+			}
+
+			.s1_2 {
+				FONT-SIZE: 97.8px;
+				FONT-FAMILY: GoudySansStd-Bold_hp;
+				color: rgb(26, 83, 121);
+			}
+
+
+/*html.ng-scope body.ng-scope.highlighter-context div#p0 div.tocList div.Node.ng-scope span.pgNos.ng-binding{display: none;}*/
+div.Node:nth-child(14) > span:nth-child(2){display: none;}
+
+		</style>
+		<!-- End shared CSS values -->
+		<!-- Begin inline CSS -->
+		<style type="text/css">
+			#t1_2 {
+				left: 36px;
+				bottom: 42px;
+			}
+		</style>
+		<!-- End inline CSS -->
+		<!-- Begin embedded font definitions -->
+		<style id="fonts1" type="text/css">
+			@font-face {
+				font-family: LucidaSansStd;
+				src: url("fonts/LucidaSansStd.woff") format("woff");
+			}
+
+			@font-face {
+				font-family: GoudySansStd-Black_hr;
+				src: url("fonts/GoudySansStd-Black_hr.woff") format("woff");
+			}
+
+			@font-face {
+				font-family: GoudySansStd-Bold_hp;
+				src: url("fonts/GoudySansStd-Bold_hp.woff") format("woff");
+			}
+		</style>
+		<!-- End embedded font definitions -->
+
+		<img src="images/toc_title.png" alt="content" id="tocTitle">
+
+		<div id="t1_2" class="t s1_2"></div>
+
+		<div class="tocList">
+			<div class="Node" ng-repeat="n in tocData track by $index">
+				<span class="tocTxt" id="list{{$index+1}}" data-pg="{{n.target}}" onclick="parent.loadNewPageFromContent(event)">{{n.title}}</span>
+				<span class="pgNos" data-pg="{{n.target}}" onclick="parent.loadNewPageFromContent(event)">{{n.target}}</span>	
+	
+				<div class="SubNode" ng-repeat="t in n.subTitle track by $index">
+					<span class="tocTxt" id="list{{$index+1}}" data-pg="{{t.target}}" onclick="parent.loadNewPageFromContent(event)">{{t.title}}</span>
+					<span class="pgNos" data-pg="{{t.target}}" onclick="parent.loadNewPageFromContent(event)">{{t.target}}</span>	
+				</div>
+			</div>
+		</div>
+
+		<div class="IconList">
+			<!-- <img src="../../../assets/ui/img/audioIcon.png" alt="" title="Audio" />
+			<img src="../../../assets/ui/img/audIcon.png" alt="" title="Read" />
+			<img src="../../../assets/ui/img/enlarge.png" alt="" title="Pop-out" /> -->
+			<!-- <img src="../../../assets/ui/img/listeningIcon.png" alt="" title="Listen" /> -->
+			<!-- <img src="../../../assets/ui/img/actIcon.png" alt="" title="On-page Interactivity" /> -->
+<!-- 			<img src="../../../assets/ui/img/hindiwriteIcon.png" alt="" title="Hindi" />
+			<img src="../../../assets/ui/img/speakIcon.png" alt="" title="Speak" />
+			<img src="../../../assets/ui/img/paintIcon.png" alt="" title="Paint" />
+			<img src="../../../assets/ui/img/drawIcon.png" alt="" title="Draw" />
+			<img src="../../../assets/ui/img/circleIcon.png" alt="" title="Circle" />
+			<img src="../../../assets/ui/img/stickerIcon.png" alt="" title="Sticker" />
+			<img src="../../../assets/ui/img/writeIcon.png" alt="" title="Write" />
+			<img src="../../../assets/ui/img/listenIcon.png" alt="" title="Listen" />
+			<img src="../../../assets/ui/img/traceIcon.png" alt="" title="Trace" />
+			<img src="../../../assets/ui/img/__meriDuniyaSe_Icon.png" alt="" title="Meri Duniya" /> -->
+		</div>
+
+		<!-- <h1 style="text-align: center;"> First Blank Page </h1> -->
+	</div>
+
+	<script src="../../../assets/js/libs/angular.min.js"></script>
+	<script src="../../../assets/js/book_pages_controller.js"></script>
+	<script src="../actLink.js"></script>
+</body>
+
+</html>

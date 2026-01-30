@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon points="43.75 17.75 43.75 42.75 6.25 42.75 6.25 28.17 14.58 19.83 28.12 33.37 43.75 17.75"/>
+      <polygon class="cls-1" points="43.75 5.25 43.75 17.75 28.12 33.37 14.58 19.83 6.25 28.17 6.25 5.25 43.75 5.25"/>
+    </g>
+    <g>
+      <polyline class="cls-3" points="43.75 17.75 43.75 42.75 6.25 42.75 6.25 28.17"/>
+      <polygon class="cls-3" points="6.25 28.17 6.25 5.25 43.75 5.25 43.75 17.75 28.12 33.37 14.58 19.83 6.25 28.17"/>
+    </g>
+  </g>
+  <path class="cls-2" d="M43.75,3.75H6.25c-.83,0-1.5.67-1.5,1.5v37.5c0,.83.67,1.5,1.5,1.5h37.5c.83,0,1.5-.67,1.5-1.5V5.25c0-.83-.67-1.5-1.5-1.5Z"/>
+  <circle cx="28.12" cy="14.62" r="6.71" transform="translate(-2.1 24.17) rotate(-45)"/>
+</svg>

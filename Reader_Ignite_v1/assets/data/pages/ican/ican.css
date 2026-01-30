@@ -1,0 +1,261 @@
+/*-- iCan - Activity : Starts --*/
+
+.ican { cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}	
+.ican[type=radio] { -webkit-appearance: none; outline: none; border: none;}
+.ican[type=radio]:checked {
+  background: url(../icons/tick.png) center no-repeat;  
+  text-align: center;
+}
+
+/*-- uncomment below 2 css to set box positions --*/
+/*#ICanActivity .ican{background-color: #FED5B1 !important; opacity: 0.5 !important;}*/
+/*#ICanActivity {background-color: rgba(0,0,0,0.5) !important;}*/
+
+#ICanActivity div{cursor: pointer;}
+
+/*-- add/remove number of boxes as per requirement --*/		
+
+/*-- change width/height of container --*/
+
+.ClsICanHome{
+  width:86px; height: 88px;
+  position: absolute; top: 802px;
+  left: 266px;
+  background-image: url("../icons/home.png");
+  cursor: pointer;
+  background-size: contain;
+}
+
+/* dynamic creations */
+#ICanActivity {
+    position: absolute;
+    width: 519px;
+    top: 959px;
+    height: 163px;
+    left: 323px;
+    /*background: rgba(0,0,0,0.5);*/
+}	
+
+
+
+/*box 1&2*/
+#Cell0_0 { 
+  width: 255px;
+    height: 55px;
+    position: absolute;
+    top: -1px;
+    left: 0px;   
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+  /*background: rgba(0,0,0,0.5);*/
+}
+#Cell0_1 { 
+  width: 255px;
+    height: 55px;
+    position: absolute;
+    top: -1px;
+    left: 260px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+   /*background: rgba(0,0,0,0.5);*/
+}
+
+
+/*box 3&4*/
+#Cell1_1 {
+  width: 255px;
+    height: 36px;
+    position: absolute;
+    top: 62px;
+    left: 0px;     
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+   /*background: rgba(0,0,0,0.5);*/
+}
+#Cell1_2 {
+  width: 255px;
+    height: 36px;
+    position: absolute;
+    top: 62px;
+    left: 260px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+  /*background: rgba(0,0,0,0.5);*/
+}
+
+
+#Cell2_2 {
+  width: 255px;
+  height: 55px;
+  position: absolute;
+  top: 108px;
+  left: 0px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell2_3 {
+  width: 255px;
+  height: 55px;
+  position: absolute;
+  top: 108px;
+  left: 260px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+
+
+/*box 5&6*/
+#Cell3_3 {
+  width: 255px;
+    height: 55px;
+    position: absolute;
+    top: 90px;
+    left: -4px;      
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+  /*background: rgba(0,0,0,0.5);*/
+}
+#Cell3_4 {
+  width: 255px;
+    height: 55px;
+    position: absolute;
+    top: 90px;
+    left: 260px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+  /*background: rgba(0,0,0,0.5);*/
+}
+
+
+#Cell4_4 {
+  width: 255px;
+  height: 55px;
+  position: absolute;
+  top: 150px;
+  left: -4px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell4_5 {
+  width: 255px;
+  height: 55px;
+  position: absolute;
+  top: 150px;
+  left: 260px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+
+
+
+#Cell5_5 {
+  width: 148px;
+  height: 39px;
+  position: absolute;
+  top: 408px;
+  left: -4px;       
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell5_6 {
+  width: 147px;
+  height: 39px;
+  position: absolute;
+  top: 404px;
+  left: 189px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*box 13&14*/
+#Cell6_6 {
+  width: 153px;
+  height: 35px;
+  position: absolute;
+  top: 484px;
+  left: -6px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell6_7 {
+  width: 113px;
+  height: 54px;
+  position: absolute;
+  top: 474px;
+  left: 206px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+    
+}
+
+
+
+/*box 15&16*/
+#Cell7_7 {
+  width: 214px;
+  height: 63px;
+  position: absolute;
+  top: 505px;
+  left: 0px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell7_8 {
+  width: 237px;
+  height: 63px;
+  position: absolute;
+  top: 505px;
+  left: 225px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+
+
+
+/*box 17&18*/
+#Cell8_8 {
+  width: 214px;
+  height: 41px;
+  position: absolute;
+  top: 575px;
+  left: 0px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+#Cell8_9 {
+  width: 237px;
+  height: 41px;
+  position: absolute;
+  top: 575px;
+  left: 225px;        
+  border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -ms-border-radius: 18px; -o-border-radius: 18px;
+}
+
+
+.addCheck{
+  background: url(../icons/tick.png) center no-repeat;
+  text-align: center;
+}
+
+/* close dynamic creations */
+
+/*-- box positions : starts --*/
+
+/* box position as below:
+ Left   Right
+.box1   .box2
+.box3   .box4
+.box5   .box6
+.box7   .box8
+.box9   .box10
+.box11  .box12
+.box13  .box14
+*/
+
+/*-- box positions : ends --*/
+/*-- iCan - Activity : Ends --*/
