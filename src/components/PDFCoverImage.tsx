@@ -129,7 +129,7 @@ const PDFCoverImage: React.FC<PDFCoverImageProps> = ({
   }
 
   // Render canvas with PDF
-  return <canvas ref={canvasRef} className={className} alt={alt} />;
+  return <canvas ref={canvasRef} className={className} />;
 };
 
 export default PDFCoverImage;

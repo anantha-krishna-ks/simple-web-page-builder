@@ -41,6 +41,7 @@ const Index = () => {
         subject={subject?.title || ""}
         onClose={() => setSelectedSubject(null)}
         selectedChapter={selectedChapter}
+        ebookPath=""
       />
     );
   }
