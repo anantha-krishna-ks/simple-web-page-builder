@@ -1,0 +1,341 @@
+/* Dashboard Styles */
+
+/* Main Layout */
+.dashboard-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(var(--background));
+}
+
+.dashboard-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+/* Dashboard Header Section */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-description {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+}
+
+.section-subheading {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layouts */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.count-widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resources-count-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Count Widget */
+.count-widget-content {
+  padding: 1.5rem;
+}
+
+.count-widget-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.count-widget-icon-wrapper {
+  padding: 0.75rem;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 0.5rem;
+}
+
+.count-widget-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: hsl(var(--primary));
+}
+
+.count-widget-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.count-widget-label {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Coming Soon Section */
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  position: relative;
+}
+
+.coming-soon-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.coming-soon-gradient-1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 9999px;
+  filter: blur(80px);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.coming-soon-gradient-2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: hsl(var(--primary) / 0.05);
+  border-radius: 9999px;
+  filter: blur(80px);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: 1s;
+}
+
+.coming-soon-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: fade-in 0.5s ease-out;
+}
+
+.coming-soon-image-wrapper {
+  position: relative;
+}
+
+.coming-soon-image {
+  width: 12rem;
+  height: 12rem;
+  object-fit: contain;
+  animation: scale-in 0.6s ease-out, float 3s ease-in-out infinite;
+}
+
+.coming-soon-text {
+  text-align: center;
+  max-width: 32rem;
+  padding: 0 1rem;
+}
+
+.coming-soon-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+}
+
+.coming-soon-badge {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin-bottom: 0.5rem;
+  animation: fade-in 0.5s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.coming-soon-description {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  animation: fade-in 0.5s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.coming-soon-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  animation: fade-in 0.5s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.coming-soon-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: hsl(var(--primary));
+  border-radius: 9999px;
+  animation: bounce 1s infinite;
+}
+
+.coming-soon-dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.coming-soon-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Parent Dashboard Specific */
+.parent-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, hsl(var(--primary) / 0.05), hsl(var(--background)), hsl(var(--secondary) / 0.05));
+}
+
+.parent-dashboard-main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.parent-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.parent-section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.parent-section-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.125rem;
+}
+
+.parent-back-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.parent-resource-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.parent-resource-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.parent-resource-description {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .coming-soon-image {
+    width: 16rem;
+    height: 16rem;
+  }
+  
+  .coming-soon-title {
+    font-size: 2.25rem;
+  }
+  
+  .coming-soon-badge {
+    font-size: 1.5rem;
+  }
+  
+  .coming-soon-description {
+    font-size: 1.125rem;
+  }
+  
+  .parent-section-title {
+    font-size: 2.25rem;
+  }
+  
+  .parent-dashboard-main {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subjects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .resources-count-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+  
+  .section-heading {
+    font-size: 1rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
